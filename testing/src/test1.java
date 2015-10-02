@@ -26,44 +26,70 @@ public class test1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        newjLabel1 = new javax.swing.JLabel();
+        newjButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        NewButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        newjLabel1.setText("jLabel1");
 
-        jButton1.setText("jButton1");
+        newjButton1.setText("jButton1");
+        newjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newnewjButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton2");
+
+        NewButton.setText("NewButton");
+        NewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
+                .addGap(76, 76, 76)
+                .addComponent(newjLabel1)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewButton)
                     .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
-                .addContainerGap(154, Short.MAX_VALUE))
+                    .addComponent(newjButton1))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addComponent(jButton1)
-                .addGap(26, 26, 26)
-                .addComponent(jButton2)
+                .addGap(60, 60, 60)
+                .addComponent(NewButton)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(newjLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(newjButton1)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton2)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void newnewjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newnewjButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newnewjButton1ActionPerformed
+
+    private void NewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NewButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +120,7 @@ public class test1 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new test1().setVisible(true);
             }
@@ -101,8 +128,9 @@ public class test1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton NewButton;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton newjButton1;
+    private javax.swing.JLabel newjLabel1;
     // End of variables declaration//GEN-END:variables
 }
