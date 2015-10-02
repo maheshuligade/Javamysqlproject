@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package timtim;
+package testing;
 
 /**
  *
  * @author ayush
  */
-public class Timtim {
+public class Testing {
 
     /**
      * @param args the command line arguments
