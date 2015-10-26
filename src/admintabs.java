@@ -76,6 +76,7 @@ public class admintabs extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         l2 = new javax.swing.JLabel();
@@ -142,8 +143,6 @@ public class admintabs extends javax.swing.JFrame {
             }
         });
 
-        text10.setEditable(false);
-
         text11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text11ActionPerformed(evt);
@@ -201,6 +200,13 @@ public class admintabs extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Enter new Employee");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -251,8 +257,9 @@ public class admintabs extends javax.swing.JFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -262,7 +269,7 @@ public class admintabs extends javax.swing.JFrame {
                         .addComponent(text18, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(text15, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text17, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,7 +277,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text13, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,14 +341,16 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addGap(35, 35, 35)
+                .addGap(15, 15, 15)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jButton8)
+                    .addComponent(jButton7))
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("EMPLOYEES", jPanel1);
@@ -366,7 +375,7 @@ public class admintabs extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(l2)
                     .addComponent(jButton1))
-                .addContainerGap(755, Short.MAX_VALUE))
+                .addContainerGap(787, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -572,6 +581,7 @@ public class admintabs extends javax.swing.JFrame {
         String dob=text19.getText();
         String position=text20.getText();
         String dept=text21.getText();
+        text10.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -597,6 +607,7 @@ public class admintabs extends javax.swing.JFrame {
             at.close();
             conn.close();
             JOptionPane.showMessageDialog(this,"Table Updated" );
+            button123ActionPerformed(evt);
         }   
         catch (Exception e)
         {
@@ -607,6 +618,16 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         String empid=text10.getText();
+        if(empid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No employee details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this employee ?","Delete",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -622,13 +643,66 @@ public class admintabs extends javax.swing.JFrame {
             at.execute(sql);
             conn.close();
            JOptionPane.showMessageDialog(this,"Employee removed from database" );
-        }   
+           button123ActionPerformed(evt);
+        }
+    
         catch (Exception e)
         {
-           JOptionPane.showMessageDialog(this,"Table not Updated" );
+           JOptionPane.showMessageDialog(null,e );
             
         }
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        text10.setEditable(true);
+        String empid=text10.getText();
+        String empname=text11.getText();
+        String married=text12.getText();
+        String gender=text13.getText();
+        String acctno=text14.getText();
+        String neft=text15.getText();
+        String phno=text16.getText();
+        String address=text17.getText();
+        String pan=text18.getText();
+        String dob=text19.getText();
+        String position=text20.getText();
+        String dept=text21.getText();
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into employee values (?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, empid);
+            pst.setString(2,empname);
+            pst.setString(3, married);
+            pst.setString(4,gender);
+            pst.setString(5, acctno);
+            pst.setString(6, neft);
+            pst.setString(7, phno);
+            pst.setString(8, address);
+            pst.setString(9, pan);
+            pst.setString(10, dob);
+            pst.setString(11, position);
+            pst.setString(12, dept);
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Employee added to database" );
+            
+            pst.close();
+            conn.close();
+            button123ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -670,6 +744,7 @@ public class admintabs extends javax.swing.JFrame {
     private javax.swing.JTable emptable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
