@@ -28,6 +28,39 @@ public class admintabs extends javax.swing.JFrame {
         WindowEvent winClosingEvent= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEve­ntQueue().postEvent(winClosingEvent);
     }
+    public boolean validdate(String s)
+    {
+        char arr[]=s.toCharArray();
+        if((arr[0]>='0' && arr[0]<='9' )&&(arr[1]>='1' && arr[1]<='9' )&&arr[2]=='/'&&(arr[3]>='0' && arr[3]<='9' )&&(arr[4]>='1' && arr[4]<='9' )&&arr[5]=='/')
+        {
+            if((arr[6]>='0' && arr[6]<='9' )&&(arr[7]>='0' && arr[7]<='9' )&&(arr[8]>='0' && arr[8]<='9' )&&(arr[0]>='1' && arr[0]<='9' ))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+     }
+    public boolean validgender(String s)
+    {
+        if(s.equals("M")||s.equals("F"))
+            return true;
+        else
+            return false;
+    }
+    public boolean validans(String s)
+    {
+                if(s.equals("Y")||s.equals("N"))
+            return true;
+        else
+            return false;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +70,8 @@ public class admintabs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jSeparator9 = new javax.swing.JSeparator();
+        ASSETS = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -78,15 +112,194 @@ public class admintabs extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableadmin = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        l2 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        textadmin2 = new javax.swing.JTextField();
+        textadmin3 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        textadmin1 = new javax.swing.JTextField();
+        jButton15 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        assetissuetable = new javax.swing.JTable();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        assetissuet3 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        assetissuet1 = new javax.swing.JTextField();
+        assetissuet4 = new javax.swing.JTextField();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jButton31 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        assetissuet2 = new javax.swing.JTextField();
+        jButton32 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        projectstable = new javax.swing.JTable();
+        jButton56 = new javax.swing.JButton();
+        jButton57 = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        projectst1 = new javax.swing.JTextField();
+        jButton58 = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JSeparator();
+        projectst2 = new javax.swing.JTextField();
+        projectst3 = new javax.swing.JTextField();
+        projectst4 = new javax.swing.JTextField();
+        projectst5 = new javax.swing.JTextField();
+        projectst6 = new javax.swing.JTextField();
+        projectst7 = new javax.swing.JTextField();
+        projectst8 = new javax.swing.JTextField();
+        projectst9 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jButton59 = new javax.swing.JButton();
+        jButton60 = new javax.swing.JButton();
+        jButton61 = new javax.swing.JButton();
+        jButton62 = new javax.swing.JButton();
+        jButton63 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        eptable = new javax.swing.JTable();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jButton66 = new javax.swing.JButton();
+        jButton67 = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JSeparator();
+        jButton68 = new javax.swing.JButton();
+        jButton69 = new javax.swing.JButton();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        ept3 = new javax.swing.JTextField();
+        ept4 = new javax.swing.JTextField();
+        jButton70 = new javax.swing.JButton();
+        jButton71 = new javax.swing.JButton();
+        jButton72 = new javax.swing.JButton();
+        jButton73 = new javax.swing.JButton();
+        ept1 = new javax.swing.JTextField();
+        ept2 = new javax.swing.JTextField();
+        jButton64 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        assettable = new javax.swing.JTable();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        assettxt1 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jButton19 = new javax.swing.JButton();
+        assettxt7 = new javax.swing.JTextField();
+        assettxt3 = new javax.swing.JTextField();
+        assettxt8 = new javax.swing.JTextField();
+        assettxt4 = new javax.swing.JTextField();
+        assettxt9 = new javax.swing.JTextField();
+        assettxt10 = new javax.swing.JTextField();
+        assettxt5 = new javax.swing.JTextField();
+        assettxt6 = new javax.swing.JTextField();
+        assettxt2 = new javax.swing.JTextField();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ntable = new javax.swing.JTable();
+        jButton40 = new javax.swing.JButton();
+        jButton41 = new javax.swing.JButton();
+        jButton42 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        n1 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        n2 = new javax.swing.JTextField();
+        n3 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        n4 = new javax.swing.JTextField();
+        n5 = new javax.swing.JTextField();
+        n6 = new javax.swing.JTextField();
+        jButton43 = new javax.swing.JButton();
+        jButton44 = new javax.swing.JButton();
+        jButton45 = new javax.swing.JButton();
+        jButton46 = new javax.swing.JButton();
+        jButton47 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        positiontable = new javax.swing.JTable();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        positiont1 = new javax.swing.JTextField();
+        positiont2 = new javax.swing.JTextField();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        jButton37 = new javax.swing.JButton();
+        jButton38 = new javax.swing.JButton();
+        jButton39 = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        deptable = new javax.swing.JTable();
+        jButton48 = new javax.swing.JButton();
+        jButton49 = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        dept1 = new javax.swing.JTextField();
+        jButton50 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        dept2 = new javax.swing.JTextField();
+        dept3 = new javax.swing.JTextField();
+        dept4 = new javax.swing.JTextField();
+        dept5 = new javax.swing.JTextField();
+        jButton51 = new javax.swing.JButton();
+        jButton52 = new javax.swing.JButton();
+        jButton53 = new javax.swing.JButton();
+        jButton54 = new javax.swing.JButton();
+        jButton55 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Admin Tabs");
-        setPreferredSize(new java.awt.Dimension(950, 900));
+        setPreferredSize(new java.awt.Dimension(1200, 900));
         setResizable(false);
 
-        jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ASSETS.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, java.awt.Color.blue));
         jPanel1.setForeground(java.awt.Color.blue);
@@ -213,9 +426,7 @@ public class admintabs extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 946, Short.MAX_VALUE)
-                    .addComponent(jSeparator2))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -256,11 +467,12 @@ public class admintabs extends javax.swing.JFrame {
                                         .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(24, 24, 24)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton3))
+                                        .addGap(36, 36, 36)
                                         .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -269,7 +481,7 @@ public class admintabs extends javax.swing.JFrame {
                         .addComponent(text18, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(text15, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text17, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +489,8 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text13, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(393, Short.MAX_VALUE))
+            .addComponent(jSeparator2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,55 +554,1546 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addGap(15, 15, 15)
-                .addComponent(jButton3)
                 .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jButton8)
                     .addComponent(jButton7))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(5311, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("EMPLOYEES", jPanel1);
+        ASSETS.addTab("EMPLOYEES", jPanel1);
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, java.awt.Color.blue));
 
-        jButton1.setText("this");
+        tableadmin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "EmpID", "Password"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableadminMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableadmin);
+        if (tableadmin.getColumnModel().getColumnCount() > 0) {
+            tableadmin.getColumnModel().getColumn(0).setResizable(false);
+            tableadmin.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jButton1.setText("GET DATA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        l2.setText("jLabel1");
+        jButton9.setText("CLEAR ALL DATA");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("FETCH EMPID DETAILS");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("ADD ADMIN");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("UPDATE DETAILS");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("REMOVE ADMIN");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("LOGOUT");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("EMPLOYEE ID:");
+
+        jLabel15.setText("PASSWORD:");
+
+        textadmin3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textadmin3ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("CLEAR DETAILS");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator3)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
+                .addGap(128, 128, 128)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(l2)
-                    .addComponent(jButton1))
-                .addContainerGap(787, Short.MAX_VALUE))
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textadmin3, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(textadmin2))
+                .addContainerGap(1032, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(569, 569, 569)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textadmin1))
+                        .addGap(67, 67, 67)
+                        .addComponent(jButton10))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(469, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(l2)
-                .addGap(48, 48, 48)
-                .addComponent(jButton1)
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton9)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10)
+                            .addComponent(textadmin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textadmin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(textadmin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jButton12)
+                    .addComponent(jButton13))
+                .addGap(18, 18, 18)
+                .addComponent(jButton15)
+                .addGap(190, 190, 190)
+                .addComponent(jButton14)
+                .addContainerGap(5371, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        ASSETS.addTab("ADMINISTRATORS", jPanel2);
 
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+        assetissuetable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "ASSETID", "EMPID"
+            }
+        ));
+        assetissuetable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                assetissuetableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(assetissuetable);
+
+        jButton24.setText("GET ASSETS DISTRIBUTION DATA");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setText("CLEAR ALL DATA");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setText("SEARCH");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("ENTER THE EMPID");
+
+        jButton27.setText("DEALLOCATE ASSET");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setText("ALLOCATE ASSET");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        jButton29.setText("REASSIGN ASSET");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setText("CLEAR ALL DATA");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("ASSETID");
+
+        jLabel28.setText("EMPID");
+
+        jButton31.setText("LOGOUT");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("ENTER THE ASSETID");
+
+        jButton32.setText("SEARCH");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator5)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(assetissuet3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(assetissuet4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(185, 185, 185)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(244, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(489, 489, 489))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(assetissuet1)
+                    .addComponent(assetissuet2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton25))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(assetissuet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel26))
+                    .addComponent(jButton26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(assetissuet2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton32))
+                .addGap(17, 17, 17)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assetissuet3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton28)
+                    .addComponent(jButton29)
+                    .addComponent(jLabel27))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assetissuet4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton27)
+                    .addComponent(jButton30)
+                    .addComponent(jLabel28))
+                .addGap(242, 242, 242)
+                .addComponent(jButton31)
+                .addContainerGap(5324, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("ISSUE/RETURN ASSETS", jPanel4);
+
+        projectstable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "PROJECT ID", " NAME", "BUDGET (Rs)", "STARTED ON", "DEADLINE", "CLIENT", "DEPT NO", "PROJ HEAD"
+            }
+        ));
+        projectstable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                projectstableMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(projectstable);
+
+        jButton56.setText("GET ALL DATA");
+        jButton56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton56ActionPerformed(evt);
+            }
+        });
+
+        jButton57.setText("CLEAR ALL FIELDS");
+        jButton57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton57ActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setText("ENTER THE PROJECT ID");
+
+        jButton58.setText("SEARCH");
+        jButton58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton58ActionPerformed(evt);
+            }
+        });
+
+        jLabel44.setText("PROJECT ID");
+
+        jLabel45.setText("NAME");
+
+        jLabel46.setText("BUDGET (RS)");
+
+        jLabel47.setText(" STARTED (dd/mm/yyyy)");
+
+        jLabel48.setText("DEADLINE (dd/mm/yyyy)");
+
+        jLabel49.setText("CLIENT");
+
+        jLabel50.setText("DEPT NO");
+
+        jLabel51.setText("PROJECT HEAD");
+
+        jButton59.setText("CREATE NEW PROJECT");
+        jButton59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton59ActionPerformed(evt);
+            }
+        });
+
+        jButton60.setText("UPADTE PROJECT DETAILS");
+        jButton60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton60ActionPerformed(evt);
+            }
+        });
+
+        jButton61.setText("REMOVE PROJECT");
+        jButton61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton61ActionPerformed(evt);
+            }
+        });
+
+        jButton62.setText("CLEAR ALL FIELD");
+        jButton62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton62ActionPerformed(evt);
+            }
+        });
+
+        jButton63.setText("LOGOUT");
+        jButton63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton63ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator7)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addGap(398, 398, 398)
+                                .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel44)
+                                            .addComponent(jLabel45)
+                                            .addComponent(jLabel46)
+                                            .addComponent(jLabel47))
+                                        .addGap(120, 120, 120)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(projectst2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                            .addComponent(projectst3)
+                                            .addComponent(projectst4)
+                                            .addComponent(projectst5))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel50)
+                                            .addComponent(jLabel49)
+                                            .addComponent(jLabel48)
+                                            .addComponent(jLabel51)))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(94, 94, 94)
+                                        .addComponent(jButton60)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                                        .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(109, 109, 109)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(projectst6, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                .addComponent(projectst7)
+                                .addComponent(projectst8)
+                                .addComponent(projectst9))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(103, 103, 103)
+                                .addComponent(projectst1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton58, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jButton57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton56, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(222, 222, 222))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton56)
+                    .addComponent(jButton57))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(projectst1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton58))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(projectst2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(projectst6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel48))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(projectst3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(projectst7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel49))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(projectst4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(projectst8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel50))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(projectst5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(projectst9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel51))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton59)
+                    .addComponent(jButton60)
+                    .addComponent(jButton61)
+                    .addComponent(jButton62))
+                .addGap(28, 28, 28)
+                .addComponent(jButton63)
+                .addContainerGap(5329, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("PROJECTS", jPanel6);
+
+        eptable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "EMP ID", "PROJ ID"
+            }
+        ));
+        eptable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eptableMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(eptable);
+
+        jLabel52.setText("ENTER THE EMPID");
+
+        jLabel53.setText("ENTER THE PROJ ID");
+
+        jButton66.setText("GET ALL DATA");
+        jButton66.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton66ActionPerformed(evt);
+            }
+        });
+
+        jButton67.setText("CLEAR ALL FIELDS");
+        jButton67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton67ActionPerformed(evt);
+            }
+        });
+
+        jButton68.setText("SEARCH");
+        jButton68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton68ActionPerformed(evt);
+            }
+        });
+
+        jButton69.setText("SEARCH");
+        jButton69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton69ActionPerformed(evt);
+            }
+        });
+
+        jLabel54.setText("EMP ID");
+
+        jLabel55.setText("PROJ ID");
+
+        jButton70.setText("ASSIGN PROJECT TO EMPLOYEE");
+        jButton70.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton70ActionPerformed(evt);
+            }
+        });
+
+        jButton71.setText("UPDATE DETAILS");
+        jButton71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton71ActionPerformed(evt);
+            }
+        });
+
+        jButton72.setText("REMOVE EMPLOYEE FROM PROJECT");
+        jButton72.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton72ActionPerformed(evt);
+            }
+        });
+
+        jButton73.setText("LOGOUT");
+        jButton73.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton73ActionPerformed(evt);
+            }
+        });
+
+        jButton64.setText("CLEAR ALL FIELDS");
+        jButton64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton64ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator11)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel52)
+                                    .addComponent(jLabel53))
+                                .addGap(183, 183, 183)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(ept1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ept2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(178, 178, 178)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton69, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))))
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton66, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton67)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(178, 178, 178)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(92, 92, 92)
+                                .addComponent(jButton70)
+                                .addGap(47, 47, 47)
+                                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton72)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ept3)
+                                .addComponent(ept4, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(373, 373, 373)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton73, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                            .addComponent(jButton64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(360, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jButton66)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton67)))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel52)
+                            .addComponent(ept1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel53)
+                                .addComponent(ept2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton69))
+                        .addGap(54, 54, 54)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton68))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(ept3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(ept4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton70)
+                    .addComponent(jButton71)
+                    .addComponent(jButton72))
+                .addGap(26, 26, 26)
+                .addComponent(jButton64)
+                .addGap(26, 26, 26)
+                .addComponent(jButton73)
+                .addContainerGap(5369, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("ASSIGN EMPLOYEE PROJECTS", jPanel7);
+
+        assettable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "assetid", "type", "Prcocured on", "Cost Price (Rs)", "modelno", "macid", "RAM", "Processor", "Storage"
+            }
+        ));
+        assettable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                assettableMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(assettable);
+
+        jButton16.setText("GET DATA");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("CLEAR ALL DATA");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setText("SEARCH");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton19.setText("LOGOUT");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        assettxt7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assettxt7ActionPerformed(evt);
+            }
+        });
+
+        jButton20.setText("ADD ASSET");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        jButton21.setText("UPDATE ASSET");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        jButton22.setText("REMOVE ASSET");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
+        jButton23.setText("CLEAR DETAILS");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("ASSET ID :");
+
+        jLabel17.setText("ASSET ID");
+
+        jLabel18.setText("MACID");
+
+        jLabel19.setText("TYPE");
+
+        jLabel20.setText("RAM");
+
+        jLabel21.setText("PROCESSOR");
+
+        jLabel22.setText(" PROCURED ON (dd/mm/yyyy)");
+
+        jLabel23.setText("STORAGE");
+
+        jLabel24.setText("COST PRICE (Rs)");
+
+        jLabel25.setText("MODEL NO");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(assettxt3, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                                        .addComponent(assettxt4)
+                                        .addComponent(assettxt5)
+                                        .addComponent(assettxt2)))
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(assettxt6, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)))
+                            .addGap(99, 99, 99)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(57, 57, 57)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(assettxt8, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                                .addComponent(assettxt9)
+                                .addComponent(assettxt10)
+                                .addComponent(assettxt7))
+                            .addGap(115, 115, 115)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(113, 113, 113)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(36, 36, 36)
+                            .addComponent(jLabel16)
+                            .addGap(32, 32, 32)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(assettxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(95, 95, 95)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(504, 504, 504)
+                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(189, Short.MAX_VALUE))
+            .addComponent(jSeparator4)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(assettxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton18)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton16)
+                    .addComponent(jButton17))
+                .addGap(36, 36, 36)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assettxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assettxt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton20))))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel19)
+                    .addComponent(assettxt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(assettxt8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton21))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(assettxt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(assettxt9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton22))
+                            .addComponent(jLabel21))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(assettxt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(assettxt5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assettxt10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton23))))
+                .addGap(74, 74, 74)
+                .addComponent(jButton19)
+                .addContainerGap(5410, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("ASSETS", jPanel3);
+
+        jInternalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder("                                                                                      ************** NOMINEE DETAILS ****************"));
+        jInternalFrame1.setVisible(true);
+
+        ntable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "NAME", "DOB", "GENDER", "RELATION", "EMPID"
+            }
+        ));
+        ntable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ntableMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(ntable);
+
+        jButton40.setText("GET ALL NOMINEES");
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton40ActionPerformed(evt);
+            }
+        });
+
+        jButton41.setText("CLEAR ALL DATA");
+        jButton41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton41ActionPerformed(evt);
+            }
+        });
+
+        jButton42.setText("SEARCH");
+        jButton42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton42ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("ENTER THE EMPID");
+
+        jLabel33.setText("NAME");
+
+        jLabel34.setText("DOB (dd/mm/yyyy)");
+
+        jLabel35.setText("GENDER (M/F)");
+
+        jLabel36.setText("RELATION");
+
+        jLabel37.setText("EMPID");
+
+        jButton43.setText("INSERT");
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+
+        jButton44.setText("UPDATE");
+        jButton44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton44ActionPerformed(evt);
+            }
+        });
+
+        jButton45.setText("REMOVE");
+        jButton45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton45ActionPerformed(evt);
+            }
+        });
+
+        jButton46.setText("CLEAR ALL");
+        jButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton46ActionPerformed(evt);
+            }
+        });
+
+        jButton47.setText("LOGOUT");
+        jButton47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton47ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap(511, Short.MAX_VALUE)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addComponent(jButton43)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton44)
+                                .addGap(50, 50, 50)
+                                .addComponent(jButton45)
+                                .addGap(55, 55, 55)
+                                .addComponent(jButton46))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton41, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                                        .addComponent(n1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel33)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel37))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(n6, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                    .addComponent(n5)
+                                    .addComponent(n2)
+                                    .addComponent(n3)
+                                    .addComponent(n4))))
+                        .addGap(428, 428, 428))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jButton47)
+                        .addGap(607, 607, 607))))
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton41)
+                    .addComponent(jButton40))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton42)
+                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel32)
+                        .addComponent(n1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(n2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(n3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(n4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(n5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36))
+                .addGap(23, 23, 23)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(n6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton43)
+                    .addComponent(jButton44)
+                    .addComponent(jButton45)
+                    .addComponent(jButton46))
+                .addGap(18, 18, 18)
+                .addComponent(jButton47)
+                .addContainerGap(5352, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("NOMINEES", jInternalFrame1);
+
+        positiontable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "DESIGNATION", "SALARY (Rs)"
+            }
+        ));
+        positiontable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                positiontableMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(positiontable);
+
+        jButton33.setText("GET ALL DESIGNATIONS");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+
+        jButton34.setText("CLEAR TABLE");
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("DESIGNATION ");
+
+        jLabel31.setText("SALARY (Rs)");
+
+        jButton35.setText("ADD DESIGNATION");
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+
+        jButton36.setText("REMOVE DESIGNATION");
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
+
+        jButton37.setText("UPDATE SALARY");
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton37ActionPerformed(evt);
+            }
+        });
+
+        jButton38.setText("CLEAR ALL FIELDS");
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
+
+        jButton39.setText("LOGOUT");
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton39ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(495, 495, 495)
+                .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jButton33)
+                                        .addGap(243, 243, 243))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jButton35)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton36)
+                                        .addGap(48, 48, 48)))
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jButton38))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGap(208, 208, 208)
+                                        .addComponent(jLabel30))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGap(218, 218, 218)
+                                        .addComponent(jLabel31)))
+                                .addGap(58, 58, 58)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(positiont2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(positiont1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(469, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton33)
+                    .addComponent(jButton34))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(positiont1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(positiont2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton35)
+                    .addComponent(jButton36)
+                    .addComponent(jButton37)
+                    .addComponent(jButton38))
+                .addGap(47, 47, 47)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButton39)
+                .addContainerGap(5428, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("DESIGNATIONS", jPanel8);
+
+        deptable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "deptno", "name", "head", "budget"
+            }
+        ));
+        deptable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deptableMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(deptable);
+
+        jButton48.setText("GET ALL DEPARTMENTS");
+        jButton48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton48ActionPerformed(evt);
+            }
+        });
+
+        jButton49.setText("CLEAR ALL FIELDS");
+        jButton49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton49ActionPerformed(evt);
+            }
+        });
+
+        jLabel38.setText("ENTER DEPTNO:");
+
+        jButton50.setText("SEARCH");
+        jButton50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton50ActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setText("DEPT NO");
+
+        jLabel40.setText("DEPT NAME");
+
+        jLabel41.setText("HEAD");
+
+        jLabel42.setText("BUDGET");
+
+        jButton51.setText("CREATE DEPARTMENT");
+        jButton51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton51ActionPerformed(evt);
+            }
+        });
+
+        jButton52.setText("REMOVE DEPARTMENT");
+        jButton52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton52ActionPerformed(evt);
+            }
+        });
+
+        jButton53.setText("UPDATE DETAILS");
+        jButton53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton53ActionPerformed(evt);
+            }
+        });
+
+        jButton54.setText("CLEAR FIELDS");
+        jButton54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton54ActionPerformed(evt);
+            }
+        });
+
+        jButton55.setText("LOGOUT");
+        jButton55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton55ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator6)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(dept1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton50))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton48)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton49))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
+                                .addGap(148, 148, 148)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton55, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(dept3, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                    .addComponent(dept4)
+                                                    .addComponent(dept5))
+                                                .addGap(58, 58, 58))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(dept2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)))
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton53, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton52))))))))
+                .addContainerGap(598, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton48)
+                    .addComponent(jButton49))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(dept1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton50))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(dept2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton51))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(dept3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton52))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dept4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41)
+                    .addComponent(jButton53))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel42)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dept5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton54)))
+                .addGap(41, 41, 41)
+                .addComponent(jButton55)
+                .addContainerGap(5446, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("DEPARTMENTS", jPanel5);
+
+        getContentPane().add(ASSETS, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -400,10 +2104,6 @@ public class admintabs extends javax.swing.JFrame {
                 close();
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         l2.setText("Wee");        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void button123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button123ActionPerformed
         button123.setText("Refresh");
@@ -506,6 +2206,7 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        text1.setText("");
         DefaultTableModel model = (DefaultTableModel)emptable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -656,18 +2357,38 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         text10.setEditable(true);
+        boolean ans;
         String empid=text10.getText();
         String empname=text11.getText();
         String married=text12.getText();
+        ans=validans(married);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid ans");
+            return;
+        }
         String gender=text13.getText();
+        ans=validgender(gender);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid gender");
+            return;
+        }
         String acctno=text14.getText();
         String neft=text15.getText();
         String phno=text16.getText();
         String address=text17.getText();
         String pan=text18.getText();
         String dob=text19.getText();
+        ans=validdate(dob);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid dob");
+            return;
+        }
         String position=text20.getText();
         String dept=text21.getText();
+        
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -703,6 +2424,2005 @@ public class admintabs extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        String empid=textadmin2.getText();
+        if(empid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No employee details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this admin ?","Remove admin",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from administrators where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"The administrator is removed" );
+           jButton1ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void textadmin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textadmin3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textadmin3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton1.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from administrators;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("password");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        textadmin1.setText("");
+        DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+            DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM administrators WHERE empid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, textadmin1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("password");
+                
+                model.addRow (new Object[]{d1,d2});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void tableadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableadminMouseClicked
+        try{
+            int row=tableadmin.getSelectedRow();
+            String empid = (tableadmin.getModel().getValueAt(row, 0).toString());
+            textadmin2.setText(empid);
+            String password = (tableadmin.getModel().getValueAt(row, 1).toString());
+            textadmin3.setText(password);
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_tableadminMouseClicked
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        textadmin2.setText("");
+        textadmin3.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+        String empid=textadmin2.getText();
+        String password=textadmin3.getText();
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into administrators values (?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, empid);
+            pst.setString(2,password);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"New Administrator added to database" );
+            
+            pst.close();
+            conn.close();
+            jButton1ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        String empid=textadmin2.getText();
+        if(empid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No employee details are selected" );
+        return;
+        }
+        String password=textadmin3.getText();
+        
+        textadmin2.setText("Not Mutable");
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update administrators set password='"+password+"',password='"+password+"',password='"+password+"' where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+          
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            jButton1ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void assettxt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assettxt7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assettxt7ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+       assettxt1.setText("");
+        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        jButton16.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from assets;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("type");
+                String d3=rs.getString("procuredon");
+                String d4=rs.getString("cosprice");
+                String d5=rs.getString("modelno");
+                String d6=rs.getString("macid");
+                String d7=rs.getString("ram");
+                String d8=rs.getString("processor");
+                String d9=rs.getString("storage");
+       
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM assets WHERE assetid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, assettxt1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+               String d1=rs.getString("assetid");
+                String d2=rs.getString("type");
+                String d3=rs.getString("procuredon");
+                String d4=rs.getString("cosprice");
+                String d5=rs.getString("modelno");
+                String d6=rs.getString("macid");
+                String d7=rs.getString("ram");
+                String d8=rs.getString("processor");
+                String d9=rs.getString("storage");
+       
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
+                
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void assettableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assettableMouseClicked
+         try{
+            int row=assettable.getSelectedRow();
+            String assetid = (assettable.getModel().getValueAt(row, 0).toString());
+            assettxt2.setText(assetid);
+            String type = (assettable.getModel().getValueAt(row, 1).toString());
+            assettxt3.setText(type);
+            String procuredon = (assettable.getModel().getValueAt(row, 2).toString());
+            assettxt4.setText(procuredon);
+            String costprice = (assettable.getModel().getValueAt(row, 3).toString());
+            assettxt5.setText(costprice);
+            String modelno = (assettable.getModel().getValueAt(row, 4).toString());
+            assettxt6.setText(modelno);
+            String macid = (assettable.getModel().getValueAt(row, 5).toString());
+            assettxt7.setText(macid);
+            String ram = (assettable.getModel().getValueAt(row, 6).toString());
+            assettxt8.setText(ram);
+            String processor = (assettable.getModel().getValueAt(row, 7).toString());
+            assettxt9.setText(processor);
+            String storage = (assettable.getModel().getValueAt(row, 8).toString());
+            assettxt10.setText(storage);
+            
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_assettableMouseClicked
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        assettxt2.setText("");
+        assettxt3.setText("");
+        assettxt4.setText("");
+        assettxt5.setText("");
+        assettxt6.setText("");
+        assettxt7.setText("");
+        assettxt8.setText("");
+        assettxt9.setText("");
+        assettxt10.setText("");
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        assettxt2.setEditable(true);
+        boolean ans;
+        String assetid=assettxt2.getText();
+        String type=assettxt3.getText();
+        String procuredon=assettxt4.getText();
+        ans=validdate(procuredon);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid date");
+        }
+        String costprice=assettxt5.getText();
+        String modelno=assettxt6.getText();
+        String macid=assettxt7.getText();
+        String ram=assettxt8.getText();
+        String processor=assettxt9.getText();
+        String storage=assettxt10.getText();
+        
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into assets values (?,?,?,?,?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, assetid);
+            pst.setString(2,type);
+            pst.setString(3, procuredon);
+            pst.setString(4,costprice);
+            pst.setString(5, modelno);
+            pst.setString(6, macid);
+            pst.setString(7, ram);
+            pst.setString(8, processor);
+            pst.setString(9, storage);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Asset added to database" );
+            
+            pst.close();
+            conn.close();
+            jButton16ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        String assetid=assettxt2.getText();
+        if(assetid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No asset details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this asset ?","Delete",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from assets where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"Asset removed from database" );
+           jButton16ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        String assetid=assettxt2.getText();
+        String type=assettxt3.getText();
+        String procuredon=assettxt4.getText();
+        String costprice=assettxt5.getText();
+        String modelno=assettxt6.getText();
+        String macid=assettxt7.getText();
+        String ram=assettxt8.getText();
+        String processor=assettxt9.getText();
+        String storage=assettxt10.getText();
+        
+        assettxt2.setText("Not Mutable");
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update assets set type='"+type+"',procuredon='"+procuredon+"',cosprice='"+costprice+"' where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            sql="update assets set modelno='"+modelno+"',macid='"+macid+"',ram='"+ram+"' where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            sql="update assets set processor='"+processor+"',processor='"+processor+"',storage='"+storage+"' where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            jButton16ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
+        String empid=n6.getText();
+        if(empid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No employee details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this nominee ?","Remove admin",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from nominee where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"The nominee is removed" );
+           jButton40ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton45ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+       login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton63ActionPerformed
+
+    private void jButton73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton73ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton73ActionPerformed
+
+    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton47ActionPerformed
+
+    private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton55ActionPerformed
+
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
+        login enterpage = new login();
+                enterpage.setVisible(true);
+                close();
+    }//GEN-LAST:event_jButton39ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        assetissuet1.setText("");
+        
+        assetissuet2.setText("");
+        DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        jButton24.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from assetsgiven;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("empid");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+          DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM assetsgiven WHERE empid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, assetissuet1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("empid");
+                
+                model.addRow (new Object[]{d1,d2});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+           
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+     DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM assetsgiven WHERE assetid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, assetissuet2.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("empid");
+                
+                model.addRow (new Object[]{d1,d2});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+        
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        String assetid=assetissuet3.getText();
+        String empid=assetissuet4.getText();
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into assetsgiven values (?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, assetid);
+            pst.setString(2,empid);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"New Asset allocated" );
+            
+            pst.close();
+            conn.close();
+            jButton24ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+       assetissuet3.setText("");
+       assetissuet4.setText("");
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        String assetid=assetissuet3.getText();
+        if(assetid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No asset details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to deallocate the asset to this employee ?","Delete",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from assetsgiven where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"Asset deallocated" );
+           jButton24ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        String assetid=assetissuet3.getText();
+        String empid=assetissuet4.getText();
+        if(assetid.equals("")||assetid.equals("Not Mutable"))
+        {
+        JOptionPane.showMessageDialog(this,"No asset details are selected" );
+        return;
+        }
+        
+        
+        assetissuet3.setText("Not Mutable");
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update assetsgiven set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where assetid='"+assetid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+          
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            jButton24ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void assetissuetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assetissuetableMouseClicked
+      try{
+            int row=assetissuetable.getSelectedRow();
+            String assetid = (assetissuetable.getModel().getValueAt(row, 0).toString());
+            assetissuet3.setText(assetid);
+            String empid = (assetissuetable.getModel().getValueAt(row, 1).toString());
+            assetissuet4.setText(empid);
+          
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_assetissuetableMouseClicked
+
+    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
+        
+        
+        projectst1.setText("");
+        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton57ActionPerformed
+
+    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
+      jButton56.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from project;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("projid");
+                String d2=rs.getString("projname");
+                String d3=rs.getString("budget");
+                String d4=rs.getString("started");
+                String d5=rs.getString("deadline");
+                String d6=rs.getString("client");
+                String d7=rs.getString("deptno");
+                String d8=rs.getString("projecthead");
+                
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton56ActionPerformed
+
+    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM project WHERE projid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, projectst1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("projid");
+                String d2=rs.getString("projname");
+                String d3=rs.getString("budget");
+                String d4=rs.getString("started");
+                String d5=rs.getString("deadline");
+                String d6=rs.getString("client");
+                String d7=rs.getString("deptno");
+                String d8=rs.getString("projecthead");
+                
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton58ActionPerformed
+
+    private void projectstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_projectstableMouseClicked
+         DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        try{
+            int row=projectstable.getSelectedRow();
+            String projid = (projectstable.getModel().getValueAt(row, 0).toString());
+            projectst2.setText(projid);
+            String projname = (projectstable.getModel().getValueAt(row, 1).toString());
+            projectst3.setText(projname);
+            String budget = (projectstable.getModel().getValueAt(row, 2).toString());
+            projectst4.setText(budget);
+            String started = (projectstable.getModel().getValueAt(row, 3).toString());
+            projectst5.setText(started);
+            String deadline = (projectstable.getModel().getValueAt(row, 4).toString());
+            projectst6.setText(deadline);
+            String client = (projectstable.getModel().getValueAt(row, 5).toString());
+            projectst7.setText(client);
+            String deptno = (projectstable.getModel().getValueAt(row, 6).toString());
+            projectst8.setText(deptno);
+            String projhead = (projectstable.getModel().getValueAt(row, 7).toString());
+            projectst9.setText(projhead);
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_projectstableMouseClicked
+
+    private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
+        boolean ans;
+        projectst2.setEditable(true);
+        String projid=projectst2.getText();
+        String projname=projectst3.getText();
+        String budget=projectst4.getText();
+        String started=projectst5.getText();
+        ans=validdate(started);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid start date");
+        }
+        String deadline=projectst6.getText();
+        ans=validdate(deadline);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid deadline date");
+        }
+        String client=projectst7.getText();
+        String deptno=projectst8.getText();
+        String projecthead=projectst9.getText();
+        
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into project values (?,?,?,?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, projid);
+            pst.setString(2,projname);
+            pst.setString(3, budget);
+            pst.setString(4,started);
+            pst.setString(5, deadline);
+            pst.setString(6, client);
+            pst.setString(7, deptno);
+            pst.setString(8, projecthead);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Project Created" );
+            
+            pst.close();
+            conn.close();
+            jButton56ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton59ActionPerformed
+
+    private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
+        projectst2.setText("");
+        projectst3.setText("");
+        projectst4.setText("");
+        projectst5.setText("");
+        projectst6.setText("");
+        projectst7.setText("");
+        projectst8.setText("");
+        projectst9.setText("");
+    }//GEN-LAST:event_jButton62ActionPerformed
+
+    private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
+        String projectid=projectst2.getText();
+        if(projectid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No Project details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this project ?","Delete",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from project where projid='"+projectid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"Project removed from database" );
+           jButton56ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton61ActionPerformed
+
+    private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
+       String projid=projectst2.getText();
+        String projname=projectst3.getText();
+        String budget=projectst4.getText();
+        String started=projectst5.getText();
+        String deadline=projectst6.getText();
+        String client=projectst7.getText();
+        String deptno=projectst8.getText();
+        String projecthead=projectst9.getText();
+        
+        projectst2.setText("Not Mutable");
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update project set projname='"+projname+"',budget='"+budget+"',started='"+started+"' where projid='"+projid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            sql="update project set deadline='"+deadline+"',client='"+client+"',deptno='"+deptno+"' where projid='"+projid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            sql="update project set projecthead='"+projecthead+"',projecthead='"+projecthead+"',projecthead='"+projecthead+"' where projid='"+projid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Project Details Updated" );
+            jButton56ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e);
+            
+        }
+    }//GEN-LAST:event_jButton60ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+       jButton33.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)positiontable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from position;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("type");
+                String d2=rs.getString("salary");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+       DefaultTableModel model = (DefaultTableModel)positiontable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void positiontableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_positiontableMouseClicked
+        try{
+            int row=positiontable.getSelectedRow();
+            String pos = (positiontable.getModel().getValueAt(row, 0).toString());
+            positiont1.setText(pos);
+            String salary = (positiontable.getModel().getValueAt(row, 1).toString());
+            positiont2.setText(salary);
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_positiontableMouseClicked
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+         String type=positiont1.getText();
+        String sal=positiont2.getText();
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into position values (?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, type);
+            pst.setString(2,sal);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"New Designation added to database" );
+            
+            pst.close();
+            conn.close();
+            jButton33ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        String type=positiont1.getText();
+        if(positiont1.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No Position details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this Designation ?","Remove admin",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from position where type='"+type+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"The Designation is removed" );
+           jButton33ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        positiont1.setText("");
+        positiont2.setText("");
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+        String pos=positiont1.getText();
+        String sal=positiont2.getText();
+        if(pos.equals("")||pos.equals("Not Mutable"))
+        {
+        JOptionPane.showMessageDialog(this,"No Designation details are selected" );
+        return;
+        }
+        
+        
+        positiont1.setText("Not Mutable");
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update position set salary='"+sal+"',salary='"+sal+"',salary='"+sal+"' where type='"+pos+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+          
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Details Updated" );
+            jButton33ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton37ActionPerformed
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+        n1.setText("");
+        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton41ActionPerformed
+
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+        jButton40.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from nominee;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("name");
+                String d2=rs.getString("dob");
+                String d3=rs.getString("gender");
+                String d4=rs.getString("relation");
+                String d5=rs.getString("empid");
+                model.addRow (new Object[]{d1,d2,d3,d4,d5});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton40ActionPerformed
+
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM nominee WHERE empid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, n1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+               String d1=rs.getString("name");
+                String d2=rs.getString("dob");
+                String d3=rs.getString("gender");
+                String d4=rs.getString("relation");
+                String d5=rs.getString("empid");
+                model.addRow (new Object[]{d1,d2,d3,d4,d5});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton42ActionPerformed
+
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
+        n2.setText("");
+        n3.setText("");
+        n4.setText("");
+        n5.setText("");
+        n6.setText("");
+        
+        
+    }//GEN-LAST:event_jButton46ActionPerformed
+
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        boolean ans;
+        String name=n2.getText();
+        String dob=n3.getText();
+        ans=validdate(dob);
+        if(ans==false)
+        {
+            JOptionPane.showMessageDialog(this,"Invalid date");
+        }
+        String gender=n4.getText();
+        String relation=n5.getText();
+        String empid=n6.getText();
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into nominee values (?,?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, name);
+            pst.setString(2,dob);
+            pst.setString(3,gender);
+            pst.setString(4,relation);
+            pst.setString(5,empid);
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"New Nominee added to database" );
+            
+            pst.close();
+            conn.close();
+            jButton40ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void ntableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ntableMouseClicked
+       DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        try{
+            int row=ntable.getSelectedRow();
+            String name = (ntable.getModel().getValueAt(row, 0).toString());
+            n2.setText(name);
+            String dob = (ntable.getModel().getValueAt(row, 1).toString());
+            n3.setText(dob);
+            String gender = (ntable.getModel().getValueAt(row, 2).toString());
+            n4.setText(gender);
+            String relation = (ntable.getModel().getValueAt(row, 3).toString());
+            n5.setText(relation);
+            String empid = (ntable.getModel().getValueAt(row, 4).toString());
+            n6.setText(empid);
+            
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_ntableMouseClicked
+
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
+        String name=n2.getText();
+        String dob=n3.getText();
+        String gender=n4.getText();
+        String relationr=n5.getText();
+        String empid=n6.getText();
+       
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update nominee set name='"+name+"',dob='"+dob+"',gender='"+gender+"' where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            sql="update nominee set relation='"+relationr+"',empid='"+empid+"',relation='"+relationr+"' where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            jButton40ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+    }//GEN-LAST:event_jButton44ActionPerformed
+
+    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        model.setRowCount(0);
+        dept1.setText("");
+    }//GEN-LAST:event_jButton49ActionPerformed
+
+    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
+       jButton48.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from department;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("deptno");
+                String d2=rs.getString("name");
+                String d3=rs.getString("head");
+                String d4=rs.getString("budget");
+                model.addRow (new Object[]{d1,d2,d3,d4});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton48ActionPerformed
+
+    private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM department WHERE deptno=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, dept1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+               String d1=rs.getString("deptno");
+                String d2=rs.getString("name");
+                String d3=rs.getString("head");
+                String d4=rs.getString("budget");
+                model.addRow (new Object[]{d1,d2,d3,d4});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton50ActionPerformed
+
+    private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
+        dept2.setEditable(true);
+        boolean ans;
+        String deptno=dept2.getText();
+        String name=dept3.getText();
+        String head=dept4.getText();
+        String budget=dept5.getText();
+      
+       
+        
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into department values (?,?,?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, deptno);
+            pst.setString(2,name);
+            pst.setString(3, head);
+            pst.setString(4,budget);
+          
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Department added to database" );
+            
+            pst.close();
+            conn.close();
+            jButton48ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton51ActionPerformed
+
+    private void deptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptableMouseClicked
+        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        try{
+            int row=deptable.getSelectedRow();
+            String deptno = (deptable.getModel().getValueAt(row, 0).toString());
+            dept2.setText(deptno);
+            String name = (deptable.getModel().getValueAt(row, 1).toString());
+            dept3.setText(name);
+            String head = (deptable.getModel().getValueAt(row, 2).toString());
+            dept4.setText(head);
+            String budget = (deptable.getModel().getValueAt(row, 3).toString());
+            dept5.setText(budget);
+            
+            
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_deptableMouseClicked
+
+    private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
+        dept2.setText("");
+        dept3.setText("");
+        dept4.setText("");
+        dept5.setText("");
+    }//GEN-LAST:event_jButton54ActionPerformed
+
+    private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
+       String deptno=dept2.getText();
+        if(deptno.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No department details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this department ?","Remove admin",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from department where deptno='"+deptno+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"The Department is removed" );
+           jButton48ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton52ActionPerformed
+
+    private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
+        String deptno=dept2.getText();
+        String name=dept3.getText();
+        String head=dept4.getText();
+        String budget=dept5.getText();
+        
+        
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update department set name='"+name+"',head='"+head+"',budget='"+budget+"' where deptno='"+deptno+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            
+            
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            jButton48ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+    }//GEN-LAST:event_jButton53ActionPerformed
+
+    private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
+        ept1.setText("");
+        ept2.setText("");
+        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton67ActionPerformed
+
+    private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
+        jButton66.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from empprojects;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("projid");
+                
+       
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_jButton66ActionPerformed
+
+    private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM empprojects WHERE empid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, ept1.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("projid");
+               
+                
+                model.addRow (new Object[]{d1,d2});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton68ActionPerformed
+
+    private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
+        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        model.setRowCount(0); 
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            ResultSet rs = null;
+            PreparedStatement pst = null;
+            String query = "SELECT*FROM empprojects WHERE projid=?;";
+            pst=conn.prepareStatement(query);
+            pst.setString(1, ept2.getText());
+            rs=pst.executeQuery();
+            int valueset=0;
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("projid");
+               
+                
+                model.addRow (new Object[]{d1,d2});
+                valueset=1;
+            }
+            
+            rs.close();
+            pst.close();
+            conn.close();
+            if(valueset==0)
+                JOptionPane.showMessageDialog(null,"No matching record");
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"Error in connection" );
+
+        }
+    }//GEN-LAST:event_jButton69ActionPerformed
+
+    private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
+       String empid=ept3.getText();
+        if(empid.equals(""))
+        {
+        JOptionPane.showMessageDialog(this,"No  details are selected" );
+        return;
+        }
+        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this employee from the project ?","Delete",JOptionPane.YES_NO_OPTION);
+        
+        if(input==0)
+        {    
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="delete from empprojects where empid='"+empid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            conn.close();
+           JOptionPane.showMessageDialog(this,"Employee removed from Project" );
+           jButton66ActionPerformed(evt);
+        }
+    
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e );
+            
+        }
+        }
+    }//GEN-LAST:event_jButton72ActionPerformed
+
+    private void eptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eptableMouseClicked
+        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        try{
+            int row=eptable.getSelectedRow();
+            String empid = (eptable.getModel().getValueAt(row, 0).toString());
+            ept3.setText(empid);
+            String projid = (eptable.getModel().getValueAt(row, 1).toString());
+            ept4.setText(projid);
+           
+           
+            
+            }   
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_eptableMouseClicked
+
+    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
+        
+        String empid=ept3.getText();
+        String projid=ept4.getText();
+        
+        
+        
+        
+        try{
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
+            "user=root&password=mysql";
+            Connection conn = null;
+            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            PreparedStatement pst = null;
+            String sql="insert into empprojects values (?,?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, empid);
+            pst.setString(2,projid);
+            
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Employee added to Project" );
+            
+            pst.close();
+            conn.close();
+            jButton66ActionPerformed(evt);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e );
+
+        }
+    }//GEN-LAST:event_jButton70ActionPerformed
+
+    private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
+         String projid=ept4.getText();
+        String empid=ept3.getText();
+        
+        if(projid.equals("")||projid.equals("Not Mutable"))
+        {
+            JOptionPane.showMessageDialog(this,"No Project selected");
+            return;
+        }
+        ept4.setText("Not Mutable");
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String sql;
+            sql="update empprojects set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where projid='"+projid+"'";
+            at=conn.prepareStatement(sql);
+            at.execute(sql);
+            
+            
+            at.close();
+            conn.close();
+            JOptionPane.showMessageDialog(this,"Details Updated" );
+            jButton66ActionPerformed(evt);
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(null,e);
+            
+        }
+    }//GEN-LAST:event_jButton71ActionPerformed
+
+    private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
+        ept3.setText("");
+        ept4.setText("");
+    }//GEN-LAST:event_jButton64ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -740,36 +4460,213 @@ public class admintabs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane ASSETS;
+    private javax.swing.JTextField assetissuet1;
+    private javax.swing.JTextField assetissuet2;
+    private javax.swing.JTextField assetissuet3;
+    private javax.swing.JTextField assetissuet4;
+    private javax.swing.JTable assetissuetable;
+    private javax.swing.JTable assettable;
+    private javax.swing.JTextField assettxt1;
+    private javax.swing.JTextField assettxt10;
+    private javax.swing.JTextField assettxt2;
+    private javax.swing.JTextField assettxt3;
+    private javax.swing.JTextField assettxt4;
+    private javax.swing.JTextField assettxt5;
+    private javax.swing.JTextField assettxt6;
+    private javax.swing.JTextField assettxt7;
+    private javax.swing.JTextField assettxt8;
+    private javax.swing.JTextField assettxt9;
     private javax.swing.JButton button123;
+    private javax.swing.JTextField dept1;
+    private javax.swing.JTextField dept2;
+    private javax.swing.JTextField dept3;
+    private javax.swing.JTextField dept4;
+    private javax.swing.JTextField dept5;
+    private javax.swing.JTable deptable;
     private javax.swing.JTable emptable;
+    private javax.swing.JTextField ept1;
+    private javax.swing.JTextField ept2;
+    private javax.swing.JTextField ept3;
+    private javax.swing.JTextField ept4;
+    private javax.swing.JTable eptable;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
+    private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JButton jButton47;
+    private javax.swing.JButton jButton48;
+    private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton50;
+    private javax.swing.JButton jButton51;
+    private javax.swing.JButton jButton52;
+    private javax.swing.JButton jButton53;
+    private javax.swing.JButton jButton54;
+    private javax.swing.JButton jButton55;
+    private javax.swing.JButton jButton56;
+    private javax.swing.JButton jButton57;
+    private javax.swing.JButton jButton58;
+    private javax.swing.JButton jButton59;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton60;
+    private javax.swing.JButton jButton61;
+    private javax.swing.JButton jButton62;
+    private javax.swing.JButton jButton63;
+    private javax.swing.JButton jButton64;
+    private javax.swing.JButton jButton66;
+    private javax.swing.JButton jButton67;
+    private javax.swing.JButton jButton68;
+    private javax.swing.JButton jButton69;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton70;
+    private javax.swing.JButton jButton71;
+    private javax.swing.JButton jButton72;
+    private javax.swing.JButton jButton73;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel l2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTextField n1;
+    private javax.swing.JTextField n2;
+    private javax.swing.JTextField n3;
+    private javax.swing.JTextField n4;
+    private javax.swing.JTextField n5;
+    private javax.swing.JTextField n6;
+    private javax.swing.JTable ntable;
+    private javax.swing.JTextField positiont1;
+    private javax.swing.JTextField positiont2;
+    private javax.swing.JTable positiontable;
+    private javax.swing.JTextField projectst1;
+    private javax.swing.JTextField projectst2;
+    private javax.swing.JTextField projectst3;
+    private javax.swing.JTextField projectst4;
+    private javax.swing.JTextField projectst5;
+    private javax.swing.JTextField projectst6;
+    private javax.swing.JTextField projectst7;
+    private javax.swing.JTextField projectst8;
+    private javax.swing.JTextField projectst9;
+    private javax.swing.JTable projectstable;
+    private javax.swing.JTable tableadmin;
     private javax.swing.JTextField text1;
     private javax.swing.JTextField text10;
     private javax.swing.JTextField text11;
@@ -783,5 +4680,8 @@ public class admintabs extends javax.swing.JFrame {
     private javax.swing.JTextField text19;
     private javax.swing.JTextField text20;
     private javax.swing.JTextField text21;
+    private javax.swing.JTextField textadmin1;
+    private javax.swing.JTextField textadmin2;
+    private javax.swing.JTextField textadmin3;
     // End of variables declaration//GEN-END:variables
 }
