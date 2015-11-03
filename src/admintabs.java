@@ -61,6 +61,13 @@ public class admintabs extends javax.swing.JFrame {
         else
             return false;
     }
+    public boolean isnull(String s)
+    {
+                if(s.equals("")||s.equals(" "))
+            return true;
+        else
+            return false;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,44 +118,6 @@ public class admintabs extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tableadmin = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        textadmin2 = new javax.swing.JTextField();
-        textadmin3 = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        textadmin1 = new javax.swing.JTextField();
-        jButton15 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        assetissuetable = new javax.swing.JTable();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jLabel26 = new javax.swing.JLabel();
-        assetissuet3 = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
-        assetissuet1 = new javax.swing.JTextField();
-        assetissuet4 = new javax.swing.JTextField();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jButton31 = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
-        assetissuet2 = new javax.swing.JTextField();
-        jButton32 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         projectstable = new javax.swing.JTable();
@@ -251,7 +220,6 @@ public class admintabs extends javax.swing.JFrame {
         n5 = new javax.swing.JTextField();
         n6 = new javax.swing.JTextField();
         jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
         jButton45 = new javax.swing.JButton();
         jButton46 = new javax.swing.JButton();
         jButton47 = new javax.swing.JButton();
@@ -293,6 +261,44 @@ public class admintabs extends javax.swing.JFrame {
         jButton53 = new javax.swing.JButton();
         jButton54 = new javax.swing.JButton();
         jButton55 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        assetissuetable = new javax.swing.JTable();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        assetissuet3 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        assetissuet1 = new javax.swing.JTextField();
+        assetissuet4 = new javax.swing.JTextField();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jButton31 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        assetissuet2 = new javax.swing.JTextField();
+        jButton32 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableadmin = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        textadmin2 = new javax.swing.JTextField();
+        textadmin3 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        textadmin1 = new javax.swing.JTextField();
+        jButton15 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Admin Tabs");
@@ -300,10 +306,20 @@ public class admintabs extends javax.swing.JFrame {
         setResizable(false);
 
         ASSETS.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ASSETS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ASSETSMouseClicked(evt);
+            }
+        });
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, java.awt.Color.blue));
         jPanel1.setForeground(java.awt.Color.blue);
         jPanel1.setPreferredSize(new java.awt.Dimension(952, 1000));
+        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jPanel1ComponentShown(evt);
+            }
+        });
 
         jButton2.setText("Logout");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -356,11 +372,15 @@ public class admintabs extends javax.swing.JFrame {
             }
         });
 
+        text10.setInputVerifier(assettxt10.getInputVerifier());
+
         text11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text11ActionPerformed(evt);
             }
         });
+
+        text12.setInputVerifier(assettxt10.getInputVerifier());
 
         text13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,6 +425,11 @@ public class admintabs extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        jButton7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jButton7FocusGained(evt);
+            }
+        });
 
         jButton8.setText("Fire Employee");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -447,7 +472,7 @@ public class admintabs extends javax.swing.JFrame {
                             .addComponent(text12, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(text10, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(text1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
@@ -468,10 +493,10 @@ public class admintabs extends javax.swing.JFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(24, 24, 24)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton3))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(36, 36, 36)
                                         .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -489,22 +514,22 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text13, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(468, Short.MAX_VALUE))
             .addComponent(jSeparator2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button123)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button123)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5)))
+                        .addComponent(jButton5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -554,382 +579,19 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(text21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
                 .addGap(15, 15, 15)
+                .addComponent(jButton7)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jButton8)
-                    .addComponent(jButton7))
+                    .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(5311, Short.MAX_VALUE))
+                .addContainerGap(5671, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("EMPLOYEES", jPanel1);
-
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, java.awt.Color.blue));
-
-        tableadmin.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "EmpID", "Password"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableadmin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableadminMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tableadmin);
-        if (tableadmin.getColumnModel().getColumnCount() > 0) {
-            tableadmin.getColumnModel().getColumn(0).setResizable(false);
-            tableadmin.getColumnModel().getColumn(1).setResizable(false);
-        }
-
-        jButton1.setText("GET DATA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton9.setText("CLEAR ALL DATA");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
-        jButton10.setText("FETCH EMPID DETAILS");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setText("ADD ADMIN");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
-        jButton12.setText("UPDATE DETAILS");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-
-        jButton13.setText("REMOVE ADMIN");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setText("LOGOUT");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setText("EMPLOYEE ID:");
-
-        jLabel15.setText("PASSWORD:");
-
-        textadmin3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textadmin3ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setText("CLEAR DETAILS");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator3)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textadmin3, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(textadmin2))
-                .addContainerGap(1032, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(569, 569, 569)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textadmin1))
-                        .addGap(67, 67, 67)
-                        .addComponent(jButton10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(469, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                .addGap(55, 55, 55)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton9)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton10)
-                            .addComponent(textadmin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)))
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textadmin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(textadmin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12)
-                    .addComponent(jButton13))
-                .addGap(18, 18, 18)
-                .addComponent(jButton15)
-                .addGap(190, 190, 190)
-                .addComponent(jButton14)
-                .addContainerGap(5371, Short.MAX_VALUE))
-        );
-
-        ASSETS.addTab("ADMINISTRATORS", jPanel2);
-
-        assetissuetable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "ASSETID", "EMPID"
-            }
-        ));
-        assetissuetable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                assetissuetableMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(assetissuetable);
-
-        jButton24.setText("GET ASSETS DISTRIBUTION DATA");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
-            }
-        });
-
-        jButton25.setText("CLEAR ALL DATA");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
-            }
-        });
-
-        jButton26.setText("SEARCH");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
-            }
-        });
-
-        jLabel26.setText("ENTER THE EMPID");
-
-        jButton27.setText("DEALLOCATE ASSET");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
-            }
-        });
-
-        jButton28.setText("ALLOCATE ASSET");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
-            }
-        });
-
-        jButton29.setText("REASSIGN ASSET");
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
-            }
-        });
-
-        jButton30.setText("CLEAR ALL DATA");
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
-            }
-        });
-
-        jLabel27.setText("ASSETID");
-
-        jLabel28.setText("EMPID");
-
-        jButton31.setText("LOGOUT");
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
-            }
-        });
-
-        jLabel29.setText("ENTER THE ASSETID");
-
-        jButton32.setText("SEARCH");
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator5)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(176, 176, 176)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(assetissuet3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(assetissuet4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(185, 185, 185)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(244, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(489, 489, 489))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(297, 297, 297)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(assetissuet1)
-                    .addComponent(assetissuet2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton25))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(assetissuet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel26))
-                    .addComponent(jButton26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(assetissuet2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton32))
-                .addGap(17, 17, 17)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assetissuet3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton28)
-                    .addComponent(jButton29)
-                    .addComponent(jLabel27))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assetissuet4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton27)
-                    .addComponent(jButton30)
-                    .addComponent(jLabel28))
-                .addGap(242, 242, 242)
-                .addComponent(jButton31)
-                .addContainerGap(5324, Short.MAX_VALUE))
-        );
-
-        ASSETS.addTab("ISSUE/RETURN ASSETS", jPanel4);
 
         projectstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1061,7 +723,7 @@ public class admintabs extends javax.swing.JFrame {
                                         .addComponent(jButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(94, 94, 94)
                                         .addComponent(jButton60)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                                         .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(109, 109, 109)))
@@ -1137,7 +799,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jButton62))
                 .addGap(28, 28, 28)
                 .addComponent(jButton63)
-                .addContainerGap(5329, Short.MAX_VALUE))
+                .addContainerGap(5689, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("PROJECTS", jPanel6);
@@ -1270,20 +932,21 @@ public class admintabs extends javax.swing.JFrame {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(92, 92, 92)
                                 .addComponent(jButton70)
-                                .addGap(47, 47, 47)
-                                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(38, 38, 38)
+                                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(51, 51, 51)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton72)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jButton72)
+                                .addGap(41, 41, 41)
+                                .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(ept3)
                                 .addComponent(ept4, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(373, 373, 373)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton73, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                            .addComponent(jButton64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(360, Short.MAX_VALUE))
+                        .addGap(448, 448, 448)
+                        .addComponent(jButton73, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1323,12 +986,11 @@ public class admintabs extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton70)
                     .addComponent(jButton71)
-                    .addComponent(jButton72))
-                .addGap(26, 26, 26)
-                .addComponent(jButton64)
-                .addGap(26, 26, 26)
+                    .addComponent(jButton72)
+                    .addComponent(jButton64))
+                .addGap(110, 110, 110)
                 .addComponent(jButton73)
-                .addContainerGap(5369, Short.MAX_VALUE))
+                .addContainerGap(5681, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ASSIGN EMPLOYEE PROJECTS", jPanel7);
@@ -1494,7 +1156,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(504, 504, 504)
                         .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
             .addComponent(jSeparator4)
         );
         jPanel3Layout.setVerticalGroup(
@@ -1568,7 +1230,7 @@ public class admintabs extends javax.swing.JFrame {
                             .addComponent(jButton23))))
                 .addGap(74, 74, 74)
                 .addComponent(jButton19)
-                .addContainerGap(5410, Short.MAX_VALUE))
+                .addContainerGap(5770, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ASSETS", jPanel3);
@@ -1634,13 +1296,6 @@ public class admintabs extends javax.swing.JFrame {
             }
         });
 
-        jButton44.setText("UPDATE");
-        jButton44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton44ActionPerformed(evt);
-            }
-        });
-
         jButton45.setText("REMOVE");
         jButton45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1667,17 +1322,13 @@ public class admintabs extends javax.swing.JFrame {
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(511, Short.MAX_VALUE)
+                .addContainerGap(586, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jButton43)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton44)
-                                .addGap(50, 50, 50)
-                                .addComponent(jButton45)
-                                .addGap(55, 55, 55)
                                 .addComponent(jButton46))
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
@@ -1707,7 +1358,9 @@ public class admintabs extends javax.swing.JFrame {
                                     .addComponent(n4))))
                         .addGap(428, 428, 428))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                        .addComponent(jButton47)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton45)
+                            .addComponent(jButton47))
                         .addGap(607, 607, 607))))
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -1748,12 +1401,11 @@ public class admintabs extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton43)
-                    .addComponent(jButton44)
                     .addComponent(jButton45)
                     .addComponent(jButton46))
                 .addGap(18, 18, 18)
                 .addComponent(jButton47)
-                .addContainerGap(5352, Short.MAX_VALUE))
+                .addContainerGap(5712, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("NOMINEES", jInternalFrame1);
@@ -1871,7 +1523,7 @@ public class admintabs extends javax.swing.JFrame {
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(positiont2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(positiont1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(469, Short.MAX_VALUE))
+                        .addContainerGap(544, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1907,7 +1559,7 @@ public class admintabs extends javax.swing.JFrame {
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jButton39)
-                .addContainerGap(5428, Short.MAX_VALUE))
+                .addContainerGap(5788, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("DESIGNATIONS", jPanel8);
@@ -2033,21 +1685,17 @@ public class admintabs extends javax.swing.JFrame {
                                     .addComponent(jButton55, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(dept3, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                                    .addComponent(dept4)
-                                                    .addComponent(dept5))
-                                                .addGap(58, 58, 58))
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addComponent(dept2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)))
+                                            .addComponent(dept2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(dept3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(dept4, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(dept5, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton51, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jButton53, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jButton52))))))))
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(636, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2088,10 +1736,375 @@ public class admintabs extends javax.swing.JFrame {
                         .addComponent(jButton54)))
                 .addGap(41, 41, 41)
                 .addComponent(jButton55)
-                .addContainerGap(5446, Short.MAX_VALUE))
+                .addContainerGap(5786, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("DEPARTMENTS", jPanel5);
+
+        assetissuetable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "ASSETID", "EMPID"
+            }
+        ));
+        assetissuetable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                assetissuetableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(assetissuetable);
+
+        jButton24.setText("GET ASSETS DISTRIBUTION DATA");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setText("CLEAR ALL DATA");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setText("SEARCH");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("ENTER THE EMPID");
+
+        jButton27.setText("DEALLOCATE ASSET");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setText("ALLOCATE ASSET");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        jButton29.setText("REASSIGN ASSET");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setText("CLEAR ALL DATA");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("ASSETID");
+
+        jLabel28.setText("EMPID");
+
+        jButton31.setText("LOGOUT");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("ENTER THE ASSETID");
+
+        jButton32.setText("SEARCH");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator5)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(assetissuet3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(assetissuet4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(185, 185, 185)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(319, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(489, 489, 489))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(assetissuet1)
+                    .addComponent(assetissuet2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton25))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(assetissuet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel26))
+                    .addComponent(jButton26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(assetissuet2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton32))
+                .addGap(17, 17, 17)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assetissuet3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton28)
+                    .addComponent(jButton29)
+                    .addComponent(jLabel27))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assetissuet4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton27)
+                    .addComponent(jButton30)
+                    .addComponent(jLabel28))
+                .addGap(242, 242, 242)
+                .addComponent(jButton31)
+                .addContainerGap(5684, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("ISSUE/RETURN ASSETS", jPanel4);
+
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, java.awt.Color.blue));
+
+        tableadmin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "EmpID", "Password"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableadminMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableadmin);
+        if (tableadmin.getColumnModel().getColumnCount() > 0) {
+            tableadmin.getColumnModel().getColumn(0).setResizable(false);
+            tableadmin.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jButton1.setText("GET DATA");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("CLEAR ALL DATA");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("FETCH EMPID DETAILS");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("ADD ADMIN");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("UPDATE DETAILS");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("REMOVE ADMIN");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("LOGOUT");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("EMPLOYEE ID:");
+
+        jLabel15.setText("PASSWORD:");
+
+        textadmin2.setInputVerifier(assettxt10.getInputVerifier());
+
+        textadmin3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textadmin3ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("CLEAR DETAILS");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator3)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textadmin3, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(textadmin2))
+                .addContainerGap(1106, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(569, 569, 569)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textadmin1))
+                        .addGap(67, 67, 67)
+                        .addComponent(jButton10))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(544, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton9)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10)
+                            .addComponent(textadmin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textadmin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(textadmin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jButton12)
+                    .addComponent(jButton13))
+                .addGap(18, 18, 18)
+                .addComponent(jButton15)
+                .addGap(190, 190, 190)
+                .addComponent(jButton14)
+                .addContainerGap(5731, Short.MAX_VALUE))
+        );
+
+        ASSETS.addTab("ADMINISTRATORS", jPanel2);
 
         getContentPane().add(ASSETS, java.awt.BorderLayout.PAGE_START);
 
@@ -2271,18 +2284,90 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         String empid=text10.getText();
+        boolean tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String empname=text11.getText();
+        tie=isnull(empname);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String married=text12.getText();
+        tie=isnull(married);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String gender=text13.getText();
+        tie=isnull(gender);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String acctno=text14.getText();
+        tie=isnull(acctno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String neft=text15.getText();
+        tie=isnull(neft);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String phno=text16.getText();
+        tie=isnull(phno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String address=text17.getText();
+        tie=isnull(address);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String pan=text18.getText();
+        tie=isnull(pan);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String dob=text19.getText();
+        tie=isnull(dob);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String position=text20.getText();
+        tie=isnull(position);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String dept=text21.getText();
-        text10.setText("Not Mutable");
+        tie=isnull(dept);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
+        //text10.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -2296,16 +2381,48 @@ public class admintabs extends javax.swing.JFrame {
             sql="update employee set empname='"+empname+"',married='"+married+"',gender='"+gender+"' where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            sql="update employee set acctno='"+acctno+"',neft='"+neft+"',phone='"+phno+"' where empid='"+empid+"'";
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
+                sql="update employee set acctno='"+acctno+"',neft='"+neft+"',phone='"+phno+"' where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update employee set address='"+address+"',pancard='"+pan+"',dob='"+dob+"' where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update employee set post='"+position+"',deptno='"+dept+"',gender='"+gender+"' where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
             at.close();
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
             JOptionPane.showMessageDialog(this,"Table Updated" );
             button123ActionPerformed(evt);
@@ -2359,8 +2476,27 @@ public class admintabs extends javax.swing.JFrame {
         text10.setEditable(true);
         boolean ans;
         String empid=text10.getText();
+        boolean tie;
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String empname=text11.getText();
+        tie=isnull(empname);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String married=text12.getText();
+        tie=isnull(married);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         ans=validans(married);
         if(ans==false)
         {
@@ -2369,17 +2505,59 @@ public class admintabs extends javax.swing.JFrame {
         }
         String gender=text13.getText();
         ans=validgender(gender);
+        tie=isnull(gender);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         if(ans==false)
         {
             JOptionPane.showMessageDialog(this,"Invalid gender");
             return;
         }
         String acctno=text14.getText();
+        tie=isnull(acctno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String neft=text15.getText();
+        tie=isnull(neft);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String phno=text16.getText();
+        tie=isnull(phno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String address=text17.getText();
+        tie=isnull(address);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String pan=text18.getText();
+        tie=isnull(pan);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String dob=text19.getText();
+        tie=isnull(dob);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         ans=validdate(dob);
         if(ans==false)
         {
@@ -2387,8 +2565,19 @@ public class admintabs extends javax.swing.JFrame {
             return;
         }
         String position=text20.getText();
+        tie=isnull(position);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String dept=text21.getText();
-        
+        tie=isnull(dept);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -2450,8 +2639,13 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from administrators where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+            JOptionPane.showMessageDialog(this,"The administrator is removed" );
+            else
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
             conn.close();
-           JOptionPane.showMessageDialog(this,"The administrator is removed" );
+           
            jButton1ActionPerformed(evt);
         }
     
@@ -2586,7 +2780,19 @@ public class admintabs extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
 
         String empid=textadmin2.getText();
+        boolean tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String password=textadmin3.getText();
+        tie=isnull(password);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -2617,14 +2823,25 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         String empid=textadmin2.getText();
+        boolean tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         if(empid.equals(""))
         {
         JOptionPane.showMessageDialog(this,"No employee details are selected" );
         return;
         }
         String password=textadmin3.getText();
-        
-        textadmin2.setText("Not Mutable");
+        tie=isnull(password);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
+        //textadmin2.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -2637,11 +2854,15 @@ public class admintabs extends javax.swing.JFrame {
             String sql;
             sql="update administrators set password='"+password+"',password='"+password+"',password='"+password+"' where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
-            at.execute(sql);
-          
+            boolean res=at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+            JOptionPane.showMessageDialog(this,"Table Updated" );
+            else
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
+            
             jButton1ActionPerformed(evt);
         }   
         catch (Exception e)
@@ -2809,21 +3030,75 @@ public class admintabs extends javax.swing.JFrame {
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         assettxt2.setEditable(true);
         boolean ans;
+        boolean tie;
         String assetid=assettxt2.getText();
+        tie=isnull(assetid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String type=assettxt3.getText();
+        tie=isnull(type);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String procuredon=assettxt4.getText();
+         tie=isnull(procuredon);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         ans=validdate(procuredon);
         if(ans==false)
         {
             JOptionPane.showMessageDialog(this,"Invalid date");
         }
         String costprice=assettxt5.getText();
+         tie=isnull(costprice);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String modelno=assettxt6.getText();
+         tie=isnull(modelno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String macid=assettxt7.getText();
+         tie=isnull(macid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String ram=assettxt8.getText();
+         tie=isnull(ram);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String processor=assettxt9.getText();
+         tie=isnull(processor);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String storage=assettxt10.getText();
-        
+         tie=isnull(storage);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -2883,6 +3158,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from assets where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
            JOptionPane.showMessageDialog(this,"Asset removed from database" );
            jButton16ActionPerformed(evt);
@@ -2897,17 +3180,71 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        boolean tie;
         String assetid=assettxt2.getText();
+        tie=isnull(assetid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String type=assettxt3.getText();
+        tie=isnull(type);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String procuredon=assettxt4.getText();
+        tie=isnull(procuredon);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String costprice=assettxt5.getText();
+        tie=isnull(costprice);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String modelno=assettxt6.getText();
+        tie=isnull(modelno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String macid=assettxt7.getText();
+        tie=isnull(macid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String ram=assettxt8.getText();
+        tie=isnull(ram);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String processor=assettxt9.getText();
+        tie=isnull(processor);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String storage=assettxt10.getText();
-        
-        assettxt2.setText("Not Mutable");
+        tie=isnull(storage);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
+        //assettxt2.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -2921,13 +3258,36 @@ public class admintabs extends javax.swing.JFrame {
             sql="update assets set type='"+type+"',procuredon='"+procuredon+"',cosprice='"+costprice+"' where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update assets set modelno='"+modelno+"',macid='"+macid+"',ram='"+ram+"' where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+             x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update assets set processor='"+processor+"',processor='"+processor+"',storage='"+storage+"' where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             at.close();
             conn.close();
             JOptionPane.showMessageDialog(this,"Table Updated" );
@@ -3147,7 +3507,20 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         String assetid=assetissuet3.getText();
+        boolean tie=isnull(assetid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
+        
         String empid=assetissuet4.getText();
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -3205,6 +3578,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from assetsgiven where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
            JOptionPane.showMessageDialog(this,"Asset deallocated" );
            jButton24ActionPerformed(evt);
@@ -3220,7 +3601,19 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         String assetid=assetissuet3.getText();
+        boolean tie=isnull(assetid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String empid=assetissuet4.getText();
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         if(assetid.equals("")||assetid.equals("Not Mutable"))
         {
         JOptionPane.showMessageDialog(this,"No asset details are selected" );
@@ -3228,7 +3621,7 @@ public class admintabs extends javax.swing.JFrame {
         }
         
         
-        assetissuet3.setText("Not Mutable");
+        //assetissuet3.setText("Not Mutable");
         
         try{
             
@@ -3243,7 +3636,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="update assetsgiven set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where assetid='"+assetid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-          
+            int x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             at.close();
             conn.close();
             JOptionPane.showMessageDialog(this,"Table Updated" );
@@ -3309,14 +3709,6 @@ public class admintabs extends javax.swing.JFrame {
                 model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
                 
             }
-            
-            
-            
-            
-            
-            
-            
-            
             rs.close();
             at.close();
             conn.close();
@@ -3407,24 +3799,71 @@ public class admintabs extends javax.swing.JFrame {
         boolean ans;
         projectst2.setEditable(true);
         String projid=projectst2.getText();
+        boolean tie=isnull(projid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String projname=projectst3.getText();
+        tie=isnull(projname);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String budget=projectst4.getText();
+        tie=isnull(budget);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String started=projectst5.getText();
+        tie=isnull(started);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         ans=validdate(started);
         if(ans==false)
         {
             JOptionPane.showMessageDialog(this,"Invalid start date");
         }
         String deadline=projectst6.getText();
+        tie=isnull(deadline);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         ans=validdate(deadline);
         if(ans==false)
         {
             JOptionPane.showMessageDialog(this,"Invalid deadline date");
         }
         String client=projectst7.getText();
+        tie=isnull(client);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String deptno=projectst8.getText();
+        tie=isnull(deptno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String projecthead=projectst9.getText();
-        
+        tie=isnull(projecthead);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -3494,8 +3933,16 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from project where projid='"+projectid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            conn.close();
+            int x=at.getUpdateCount();
+            if(x!=0)
            JOptionPane.showMessageDialog(this,"Project removed from database" );
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
+            conn.close();
+           
            jButton56ActionPerformed(evt);
         }
     
@@ -3509,15 +3956,62 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
        String projid=projectst2.getText();
+       boolean tie=isnull(projid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String projname=projectst3.getText();
+        tie=isnull(projname);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String budget=projectst4.getText();
+        tie=isnull(budget);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String started=projectst5.getText();
+        tie=isnull(started);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String deadline=projectst6.getText();
+        tie=isnull(deadline);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String client=projectst7.getText();
+        tie=isnull(client);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String deptno=projectst8.getText();
+        tie=isnull(deptno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         String projecthead=projectst9.getText();
-        
-        projectst2.setText("Not Mutable");
+        tie=isnull(projecthead);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
+        //projectst2.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -3531,13 +4025,36 @@ public class admintabs extends javax.swing.JFrame {
             sql="update project set projname='"+projname+"',budget='"+budget+"',started='"+started+"' where projid='"+projid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update project set deadline='"+deadline+"',client='"+client+"',deptno='"+deptno+"' where projid='"+projid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             sql="update project set projecthead='"+projecthead+"',projecthead='"+projecthead+"',projecthead='"+projecthead+"' where projid='"+projid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            
+            x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             at.close();
             conn.close();
             JOptionPane.showMessageDialog(this,"Project Details Updated" );
@@ -3616,7 +4133,19 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
          String type=positiont1.getText();
+        boolean tie=isnull(type);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String sal=positiont2.getText();
+        tie=isnull(sal);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -3669,6 +4198,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from position where type='"+type+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+               ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
            JOptionPane.showMessageDialog(this,"The Designation is removed" );
            jButton33ActionPerformed(evt);
@@ -3689,7 +4226,19 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
         String pos=positiont1.getText();
+        boolean tie=isnull(pos);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String sal=positiont2.getText();
+        tie=isnull(sal);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         if(pos.equals("")||pos.equals("Not Mutable"))
         {
         JOptionPane.showMessageDialog(this,"No Designation details are selected" );
@@ -3697,7 +4246,7 @@ public class admintabs extends javax.swing.JFrame {
         }
         
         
-        positiont1.setText("Not Mutable");
+        //positiont1.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -3711,7 +4260,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="update position set salary='"+sal+"',salary='"+sal+"',salary='"+sal+"' where type='"+pos+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-          
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             at.close();
             conn.close();
             JOptionPane.showMessageDialog(this,"Details Updated" );
@@ -3829,15 +4385,45 @@ public class admintabs extends javax.swing.JFrame {
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         boolean ans;
         String name=n2.getText();
+        boolean tie=isnull(name);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String dob=n3.getText();
+        tie=isnull(dob);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         ans=validdate(dob);
         if(ans==false)
         {
             JOptionPane.showMessageDialog(this,"Invalid date");
         }
         String gender=n4.getText();
+        tie=isnull(gender);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String relation=n5.getText();
+        tie=isnull(relation);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String empid=n6.getText();
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -3890,41 +4476,6 @@ public class admintabs extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e);
         }
     }//GEN-LAST:event_ntableMouseClicked
-
-    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
-        String name=n2.getText();
-        String dob=n3.getText();
-        String gender=n4.getText();
-        String relationr=n5.getText();
-        String empid=n6.getText();
-       
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="update nominee set name='"+name+"',dob='"+dob+"',gender='"+gender+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            sql="update nominee set relation='"+relationr+"',empid='"+empid+"',relation='"+relationr+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            
-            conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
-            jButton40ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
-    }//GEN-LAST:event_jButton44ActionPerformed
 
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
         DefaultTableModel model = (DefaultTableModel)deptable.getModel();
@@ -4020,9 +4571,33 @@ public class admintabs extends javax.swing.JFrame {
         dept2.setEditable(true);
         boolean ans;
         String deptno=dept2.getText();
+        boolean tie=isnull(deptno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String name=dept3.getText();
+        tie=isnull(name);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String head=dept4.getText();
+        tie=isnull(head);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String budget=dept5.getText();
+        tie=isnull(budget);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
       
        
         
@@ -4111,6 +4686,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from department where deptno='"+deptno+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+           ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
            JOptionPane.showMessageDialog(this,"The Department is removed" );
            jButton48ActionPerformed(evt);
@@ -4126,10 +4709,33 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
         String deptno=dept2.getText();
+        boolean tie=isnull(deptno);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String name=dept3.getText();
+        tie=isnull(name);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String head=dept4.getText();
+        tie=isnull(head);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         String budget=dept5.getText();
-        
+        tie=isnull(budget);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+            return;
+        }
         
         
         try{
@@ -4145,7 +4751,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="update department set name='"+name+"',head='"+head+"',budget='"+budget+"' where deptno='"+deptno+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             
             at.close();
             conn.close();
@@ -4315,6 +4928,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="delete from empprojects where empid='"+empid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             conn.close();
            JOptionPane.showMessageDialog(this,"Employee removed from Project" );
            jButton66ActionPerformed(evt);
@@ -4350,8 +4971,18 @@ public class admintabs extends javax.swing.JFrame {
         
         String empid=ept3.getText();
         String projid=ept4.getText();
-        
-        
+        boolean tie=isnull(projid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         
         
         try{
@@ -4385,13 +5016,24 @@ public class admintabs extends javax.swing.JFrame {
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
          String projid=ept4.getText();
         String empid=ept3.getText();
-        
+        boolean tie=isnull(projid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
+        tie=isnull(empid);
+        if(tie==true)
+        {
+            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+            return;
+        }
         if(projid.equals("")||projid.equals("Not Mutable"))
         {
             JOptionPane.showMessageDialog(this,"No Project selected");
             return;
         }
-        ept4.setText("Not Mutable");
+        //ept4.setText("Not Mutable");
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -4405,7 +5047,14 @@ public class admintabs extends javax.swing.JFrame {
             sql="update empprojects set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where projid='"+projid+"'";
             at=conn.prepareStatement(sql);
             at.execute(sql);
-            
+            int x=at.getUpdateCount();
+            if(x!=0)
+            ;
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+                return;
+            }
             
             at.close();
             conn.close();
@@ -4423,6 +5072,392 @@ public class admintabs extends javax.swing.JFrame {
         ept3.setText("");
         ept4.setText("");
     }//GEN-LAST:event_jButton64ActionPerformed
+
+    private void ASSETSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ASSETSMouseClicked
+         DefaultTableModel model = (DefaultTableModel)emptable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from employee;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("empname");
+                String d3=rs.getString("married");
+                String d4=rs.getString("gender");
+                String d5=rs.getString("acctno");
+                String d6=rs.getString("neft");
+                String d7=rs.getString("phone");
+                String d8=rs.getString("address");
+                String d9=rs.getString("pancard");
+                String d10=rs.getString("dob");
+                String d11=rs.getString("post");
+                String d12=rs.getString("deptno");
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        model = (DefaultTableModel)assetissuetable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from assetsgiven;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("empid");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        
+        
+        model = (DefaultTableModel)deptable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from department;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("deptno");
+                String d2=rs.getString("name");
+                String d3=rs.getString("head");
+                String d4=rs.getString("budget");
+                model.addRow (new Object[]{d1,d2,d3,d4});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        
+        
+        
+        
+        model = (DefaultTableModel)tableadmin.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from administrators;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("password");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        model = (DefaultTableModel)projectstable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from project;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("projid");
+                String d2=rs.getString("projname");
+                String d3=rs.getString("budget");
+                String d4=rs.getString("started");
+                String d5=rs.getString("deadline");
+                String d6=rs.getString("client");
+                String d7=rs.getString("deptno");
+                String d8=rs.getString("projecthead");
+                
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
+                
+            }
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        model = (DefaultTableModel)eptable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from empprojects;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("empid");
+                String d2=rs.getString("projid");
+                
+       
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+         model = (DefaultTableModel)assettable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from assets;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("assetid");
+                String d2=rs.getString("type");
+                String d3=rs.getString("procuredon");
+                String d4=rs.getString("cosprice");
+                String d5=rs.getString("modelno");
+                String d6=rs.getString("macid");
+                String d7=rs.getString("ram");
+                String d8=rs.getString("processor");
+                String d9=rs.getString("storage");
+       
+                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        model = (DefaultTableModel)ntable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from nominee;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("name");
+                String d2=rs.getString("dob");
+                String d3=rs.getString("gender");
+                String d4=rs.getString("relation");
+                String d5=rs.getString("empid");
+                model.addRow (new Object[]{d1,d2,d3,d4,d5});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+        model = (DefaultTableModel)positiontable.getModel();
+        model.setRowCount(0);
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
+                                   "user=root&password=mysql";
+            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
+            
+            Statement at = conn.createStatement();
+            String query = "select*from position;";
+            ResultSet rs = at.executeQuery(query); //the result is stored in rs
+            while(rs.next())
+            {
+                String d1=rs.getString("type");
+                String d2=rs.getString("salary");
+                
+                model.addRow (new Object[]{d1,d2});
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            rs.close();
+            at.close();
+            conn.close();
+            
+        }   
+        catch (Exception e)
+        {
+           JOptionPane.showMessageDialog(this,"Error in connection" );
+            
+        }
+    }//GEN-LAST:event_ASSETSMouseClicked
+
+    private void jButton7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton7FocusGained
+        
+    }//GEN-LAST:event_jButton7FocusGained
+
+    private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown
+        //jButton7.setVisible(false);
+    }//GEN-LAST:event_jPanel1ComponentShown
 
     /**
      * @param args the command line arguments
@@ -4528,7 +5563,6 @@ public class admintabs extends javax.swing.JFrame {
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
     private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
     private javax.swing.JButton jButton45;
     private javax.swing.JButton jButton46;
     private javax.swing.JButton jButton47;
