@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ayush
@@ -27,11 +26,12 @@ public class emppage extends javax.swing.JFrame {
     public emppage() {
         initComponents();
     }
-    public void close()
-    {
-        WindowEvent winClosingEvent= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+
+    public void close() {
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEve­ntQueue().postEvent(winClosingEvent);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -292,410 +292,348 @@ public class emppage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        DefaultTableModel model = (DefaultTableModel)emptable.getModel();
-        model.setRowCount(0); 
-        try{
+
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM employee WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, t1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            String d1=" ";
-            model.addRow (new Object[]{d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1,d1});
-            while(rs.next())
-            {
-                 d1=rs.getString("empid");
-                String d2=rs.getString("empname");
-                String d3=rs.getString("married");
-                String d4=rs.getString("gender");
-                String d5=rs.getString("acctno");
-                String d6=rs.getString("neft");
-                String d7=rs.getString("phone");
-                String d8=rs.getString("address");
-                String d9=rs.getString("pancard");
-                String d10=rs.getString("dob");
-                String d11=rs.getString("post");
-                String d12=rs.getString("deptno");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            String d1 = " ";
+            model.addRow(new Object[]{d1, d1, d1, d1, d1, d1, d1, d1, d1, d1, d1, d1});
+            while (rs.next()) {
+                d1 = rs.getString("empid");
+                String d2 = rs.getString("empname");
+                String d3 = rs.getString("married");
+                String d4 = rs.getString("gender");
+                String d5 = rs.getString("acctno");
+                String d6 = rs.getString("neft");
+                String d7 = rs.getString("phone");
+                String d8 = rs.getString("address");
+                String d9 = rs.getString("pancard");
+                String d10 = rs.getString("dob");
+                String d11 = rs.getString("post");
+                String d12 = rs.getString("deptno");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-            {
-                JOptionPane.showMessageDialog(null,"No matching record");
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
                 return;
             }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        model = (DefaultTableModel)eptable.getModel();
-        model.setRowCount(0); 
-        try{
+        model = (DefaultTableModel) eptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM empprojects WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, t1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            model.addRow (new Object[]{" "," "});
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("projid");
-               
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            model.addRow(new Object[]{" ", " "});
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("projid");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
             //if(valueset==0)
             //    JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        model = (DefaultTableModel)assetissuetable.getModel();
-        model.setRowCount(0); 
-        try{
+        model = (DefaultTableModel) assetissuetable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM assetsgiven WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, t1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            model.addRow (new Object[]{" "});
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("empid");
-                
-                model.addRow (new Object[]{d1});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            model.addRow(new Object[]{" "});
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("empid");
+
+                model.addRow(new Object[]{d1});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
             //if(valueset==0)
-                //JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            //JOptionPane.showMessageDialog(null,"No matching record");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        model = (DefaultTableModel)ntable.getModel();
-        model.setRowCount(0); 
-        try{
+        model = (DefaultTableModel) ntable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM nominee WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, t1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            model.addRow (new Object[]{" "," "," "," "});
-            while(rs.next())
-            {
-               String d1=rs.getString("name");
-                String d2=rs.getString("dob");
-                String d3=rs.getString("gender");
-                String d4=rs.getString("relation");
-                
-                model.addRow (new Object[]{d1,d2,d3,d4});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            model.addRow(new Object[]{" ", " ", " ", " "});
+            while (rs.next()) {
+                String d1 = rs.getString("name");
+                String d2 = rs.getString("dob");
+                String d3 = rs.getString("gender");
+                String d4 = rs.getString("relation");
+
+                model.addRow(new Object[]{d1, d2, d3, d4});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-           // if(valueset==0)
-           //     JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            // if(valueset==0)
+            //     JOptionPane.showMessageDialog(null,"No matching record");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        String uid=t1.getText();
-       
+        String uid = t1.getText();
+
         //System.out.println("testing");
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM administrators WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, uid);
-            int ctr=0;
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
+            int ctr = 0;
+            rs = pst.executeQuery();
+            if (rs.next()) {
                 //JOptionPane.showMessageDialog(null,"Login in administrator mode successful");
                 //admintabs tabs = new admintabs();
                 //tabs.setVisible(true);
                 //close();
                 ctr++;
             }
-            if(ctr==0)
-            {
+            if (ctr == 0) {
                 jTextField2.setText("NO");
-            }
-            else
-            {
+            } else {
                 jTextField2.setText("YES");
             }
             rs.close();
             pst.close();
             conn.close();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        
-        
-        
-        
-         String eid=t1.getText();
-       
+
+        String eid = t1.getText();
+
         //System.out.println("testing");
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM department WHERE head=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, eid);
-            int ctr=0;
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
+            int ctr = 0;
+            rs = pst.executeQuery();
+            if (rs.next()) {
                 //JOptionPane.showMessageDialog(null,"Login in administrator mode successful");
                 //admintabs tabs = new admintabs();
                 //tabs.setVisible(true);
                 //close();
                 ctr++;
             }
-            if(ctr==0)
-            {
+            if (ctr == 0) {
                 jTextField1.setText("NO");
-            }
-            else
-            {
+            } else {
                 jTextField1.setText("YES");
             }
             rs.close();
             pst.close();
             conn.close();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        
-        
-        
-        
-        model = (DefaultTableModel)posi.getModel();
-        model.setRowCount(0); 
-        try{
+
+        model = (DefaultTableModel) posi.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "select distinct type,salary from position inner join employee on employee.post=position.type and employee.empid=? ;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, t1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            model.addRow (new Object[]{" "," "});
-            while(rs.next())
-            {
-                String d1=rs.getString("type");
-                String d2=rs.getString("salary");
-               
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            model.addRow(new Object[]{" ", " "});
+            while (rs.next()) {
+                String d1 = rs.getString("type");
+                String d2 = rs.getString("salary");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
             //if(valueset==0)
             //    JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
-        
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void emptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emptableMouseClicked
-         DefaultTableModel model = (DefaultTableModel)emptable.getModel();
-        try{
-            int row=emptable.getSelectedRow();
-            int col=emptable.getSelectedColumn();
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
+        try {
+            int row = emptable.getSelectedRow();
+            int col = emptable.getSelectedColumn();
             String data = (emptable.getModel().getValueAt(row, col).toString());
             ta.setText(data);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_emptableMouseClicked
 
     private void eptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eptableMouseClicked
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
-        try{
-            int row=eptable.getSelectedRow();
-            int col=eptable.getSelectedColumn();
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
+        try {
+            int row = eptable.getSelectedRow();
+            int col = eptable.getSelectedColumn();
             String data = (emptable.getModel().getValueAt(row, col).toString());
             ta.setText(data);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_eptableMouseClicked
 
     private void posiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_posiMouseClicked
-        DefaultTableModel model = (DefaultTableModel)posi.getModel();
-        try{
-            int row=posi.getSelectedRow();
-            int col=posi.getSelectedColumn();
+        DefaultTableModel model = (DefaultTableModel) posi.getModel();
+        try {
+            int row = posi.getSelectedRow();
+            int col = posi.getSelectedColumn();
             String data = (posi.getModel().getValueAt(row, col).toString());
             ta.setText(data);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_posiMouseClicked
 
     private void assetissuetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assetissuetableMouseClicked
-        DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
-        try{
-            int row=assetissuetable.getSelectedRow();
-            int col=assetissuetable.getSelectedColumn();
+        DefaultTableModel model = (DefaultTableModel) assetissuetable.getModel();
+        try {
+            int row = assetissuetable.getSelectedRow();
+            int col = assetissuetable.getSelectedColumn();
             String data = (assetissuetable.getModel().getValueAt(row, col).toString());
             ta.setText(data);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_assetissuetableMouseClicked
 
     private void ntableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ntableMouseClicked
-       DefaultTableModel model = (DefaultTableModel)ntable.getModel();
-        try{
-            int row=ntable.getSelectedRow();
-            int col=ntable.getSelectedColumn();
+        DefaultTableModel model = (DefaultTableModel) ntable.getModel();
+        try {
+            int row = ntable.getSelectedRow();
+            int col = ntable.getSelectedColumn();
             String data = (ntable.getModel().getValueAt(row, col).toString());
             ta.setText(data);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_ntableMouseClicked
 
     private void t1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t1MouseClicked
-         DefaultTableModel model = (DefaultTableModel)emptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
         model.setRowCount(0);
-        model = (DefaultTableModel)eptable.getModel();
+        model = (DefaultTableModel) eptable.getModel();
         model.setRowCount(0);
-        model = (DefaultTableModel)posi.getModel();
+        model = (DefaultTableModel) posi.getModel();
         model.setRowCount(0);
-        model = (DefaultTableModel)assetissuetable.getModel();
+        model = (DefaultTableModel) assetissuetable.getModel();
         model.setRowCount(0);
-        model = (DefaultTableModel)ntable.getModel();
+        model = (DefaultTableModel) ntable.getModel();
         model.setRowCount(0);
         jTextField1.setText("");
         jTextField2.setText("");

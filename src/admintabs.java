@@ -23,51 +23,68 @@ public class admintabs extends javax.swing.JFrame {
     public admintabs() {
         initComponents();
     }
-    public void close()
-    {
-        WindowEvent winClosingEvent= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+
+    public void close() {
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEve­ntQueue().postEvent(winClosingEvent);
     }
-    public boolean validdate(String s)
-    {
-        char arr[]=s.toCharArray();
-        if((arr[0]>='0' && arr[0]<='9' )&&(arr[1]>='1' && arr[1]<='9' )&&arr[2]=='/'&&(arr[3]>='0' && arr[3]<='9' )&&(arr[4]>='1' && arr[4]<='9' )&&arr[5]=='/')
-        {
-            if((arr[6]>='0' && arr[6]<='9' )&&(arr[7]>='0' && arr[7]<='9' )&&(arr[8]>='0' && arr[8]<='9' )&&(arr[0]>='1' && arr[0]<='9' ))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
+
+    public boolean validdate(String s) {
+        String[] s1 = s.split("/");
+        int date = 0, month = 0, year = 0;
+        try {
+            date = Integer.parseInt(s1[0]);
+            month = Integer.parseInt(s1[1]);
+            year = Integer.parseInt(s1[2]);
+        } catch (Exception e) {
             return false;
         }
-     }
-    public boolean validgender(String s)
-    {
-        if(s.equals("M")||s.equals("F"))
+        if (date > 0 && date <= 31 && month <= 12 && month > 0 && year >= 1000) {
             return true;
-        else
-            return false;
+        }
+        return false;
+        /*        char arr[]=s.toCharArray();
+         if((arr[0]>='0' && arr[0]<='9' )&&(arr[1]>='1' && arr[1]<='9' )&&arr[2]=='/'&&(arr[3]>='0' && arr[3]<='9' )&&(arr[4]>='1' && arr[4]<='9' )&&arr[5]=='/')
+         {
+         if((arr[6]>='0' && arr[6]<='9' )&&(arr[7]>='0' && arr[7]<='9' )&&(arr[8]>='0' && arr[8]<='9' )&&(arr[0]>='1' && arr[0]<='9' ))
+         {
+         return true;
+         }
+         else
+         {
+         return false;
+         }
+         }
+         else
+         {
+         return false;
+         }*/
     }
-    public boolean validans(String s)
-    {
-                if(s.equals("Y")||s.equals("N"))
+
+    public boolean validgender(String s) {
+        if (s.equals("M") || s.equals("F")) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
-    public boolean isnull(String s)
-    {
-                if(s.equals("")||s.equals(" "))
+
+    public boolean validans(String s) {
+        if (s.equals("Y") || s.equals("N")) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
+
+    public boolean isnull(String s) {
+        if (s.equals("") || s.equals(" ")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -420,14 +437,14 @@ public class admintabs extends javax.swing.JFrame {
         });
 
         jButton7.setText("Update Employee");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
         jButton7.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jButton7FocusGained(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
             }
         });
 
@@ -479,7 +496,7 @@ public class admintabs extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(button123, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                         .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -588,7 +605,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(5671, Short.MAX_VALUE))
+                .addContainerGap(5688, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("EMPLOYEES", jPanel1);
@@ -799,7 +816,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jButton62))
                 .addGap(28, 28, 28)
                 .addComponent(jButton63)
-                .addContainerGap(5689, Short.MAX_VALUE))
+                .addContainerGap(5706, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("PROJECTS", jPanel6);
@@ -990,7 +1007,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jButton64))
                 .addGap(110, 110, 110)
                 .addComponent(jButton73)
-                .addContainerGap(5681, Short.MAX_VALUE))
+                .addContainerGap(5698, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ASSIGN EMPLOYEE PROJECTS", jPanel7);
@@ -1230,7 +1247,7 @@ public class admintabs extends javax.swing.JFrame {
                             .addComponent(jButton23))))
                 .addGap(74, 74, 74)
                 .addComponent(jButton19)
-                .addContainerGap(5770, Short.MAX_VALUE))
+                .addContainerGap(5787, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ASSETS", jPanel3);
@@ -1405,7 +1422,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jButton46))
                 .addGap(18, 18, 18)
                 .addComponent(jButton47)
-                .addContainerGap(5712, Short.MAX_VALUE))
+                .addContainerGap(5729, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("NOMINEES", jInternalFrame1);
@@ -1559,7 +1576,7 @@ public class admintabs extends javax.swing.JFrame {
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jButton39)
-                .addContainerGap(5788, Short.MAX_VALUE))
+                .addContainerGap(5805, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("DESIGNATIONS", jPanel8);
@@ -1736,7 +1753,7 @@ public class admintabs extends javax.swing.JFrame {
                         .addComponent(jButton54)))
                 .addGap(41, 41, 41)
                 .addComponent(jButton55)
-                .addContainerGap(5786, Short.MAX_VALUE))
+                .addContainerGap(5803, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("DEPARTMENTS", jPanel5);
@@ -1918,7 +1935,7 @@ public class admintabs extends javax.swing.JFrame {
                     .addComponent(jLabel28))
                 .addGap(242, 242, 242)
                 .addComponent(jButton31)
-                .addContainerGap(5684, Short.MAX_VALUE))
+                .addContainerGap(5701, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ISSUE/RETURN ASSETS", jPanel4);
@@ -2061,7 +2078,7 @@ public class admintabs extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                 .addGap(55, 55, 55)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -2101,7 +2118,7 @@ public class admintabs extends javax.swing.JFrame {
                 .addComponent(jButton15)
                 .addGap(190, 190, 190)
                 .addComponent(jButton14)
-                .addContainerGap(5731, Short.MAX_VALUE))
+                .addContainerGap(5748, Short.MAX_VALUE))
         );
 
         ASSETS.addTab("ADMINISTRATORS", jPanel2);
@@ -2113,114 +2130,102 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void button123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button123ActionPerformed
         button123.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)emptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from employee;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("empname");
-                String d3=rs.getString("married");
-                String d4=rs.getString("gender");
-                String d5=rs.getString("acctno");
-                String d6=rs.getString("neft");
-                String d7=rs.getString("phone");
-                String d8=rs.getString("address");
-                String d9=rs.getString("pancard");
-                String d10=rs.getString("dob");
-                String d11=rs.getString("post");
-                String d12=rs.getString("deptno");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("empname");
+                String d3 = rs.getString("married");
+                String d4 = rs.getString("gender");
+                String d5 = rs.getString("acctno");
+                String d6 = rs.getString("neft");
+                String d7 = rs.getString("phone");
+                String d8 = rs.getString("address");
+                String d9 = rs.getString("pancard");
+                String d10 = rs.getString("dob");
+                String d11 = rs.getString("post");
+                String d12 = rs.getString("deptno");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_button123ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)emptable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM employee WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, text1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("empname");
-                String d3=rs.getString("married");
-                String d4=rs.getString("gender");
-                String d5=rs.getString("acctno");
-                String d6=rs.getString("neft");
-                String d7=rs.getString("phone");
-                String d8=rs.getString("address");
-                String d9=rs.getString("pancard");
-                String d10=rs.getString("dob");
-                String d11=rs.getString("post");
-                String d12=rs.getString("deptno");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("empname");
+                String d3 = rs.getString("married");
+                String d4 = rs.getString("gender");
+                String d5 = rs.getString("acctno");
+                String d6 = rs.getString("neft");
+                String d7 = rs.getString("phone");
+                String d8 = rs.getString("address");
+                String d9 = rs.getString("pancard");
+                String d10 = rs.getString("dob");
+                String d11 = rs.getString("post");
+                String d12 = rs.getString("deptno");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         text1.setText("");
-        DefaultTableModel model = (DefaultTableModel)emptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -2233,8 +2238,8 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_text13ActionPerformed
 
     private void emptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emptableMouseClicked
-        try{
-            int row=emptable.getSelectedRow();
+        try {
+            int row = emptable.getSelectedRow();
             String empid = (emptable.getModel().getValueAt(row, 0).toString());
             text10.setText(empid);
             String empname = (emptable.getModel().getValueAt(row, 1).toString());
@@ -2259,11 +2264,9 @@ public class admintabs extends javax.swing.JFrame {
             text20.setText(position);
             String dept = (emptable.getModel().getValueAt(row, 11).toString());
             text21.setText(dept);
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_emptableMouseClicked
 
@@ -2283,315 +2286,277 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        String empid=text10.getText();
-        boolean tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String empid = text10.getText();
+        boolean tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String empname=text11.getText();
-        tie=isnull(empname);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String empname = text11.getText();
+        tie = isnull(empname);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String married=text12.getText();
-        tie=isnull(married);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String married = text12.getText();
+        tie = isnull(married);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String gender=text13.getText();
-        tie=isnull(gender);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String gender = text13.getText();
+        tie = isnull(gender);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String acctno=text14.getText();
-        tie=isnull(acctno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String acctno = text14.getText();
+        tie = isnull(acctno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String neft=text15.getText();
-        tie=isnull(neft);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String neft = text15.getText();
+        tie = isnull(neft);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String phno=text16.getText();
-        tie=isnull(phno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String phno = text16.getText();
+        tie = isnull(phno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String address=text17.getText();
-        tie=isnull(address);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String address = text17.getText();
+        tie = isnull(address);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String pan=text18.getText();
-        tie=isnull(pan);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String pan = text18.getText();
+        tie = isnull(pan);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String dob=text19.getText();
-        tie=isnull(dob);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String dob = text19.getText();
+        tie = isnull(dob);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String position=text20.getText();
-        tie=isnull(position);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        if (!validdate(dob)) {
+            JOptionPane.showMessageDialog(this, "INVALID DATE");
             return;
         }
-        String dept=text21.getText();
-        tie=isnull(dept);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String position = text20.getText();
+        tie = isnull(position);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
+            return;
+        }
+        String dept = text21.getText();
+        tie = isnull(dept);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
         //text10.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update employee set empname='"+empname+"',married='"+married+"',gender='"+gender+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update employee set empname='" + empname + "',married='" + married + "',gender='" + gender + "' where empid='" + empid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-                sql="update employee set acctno='"+acctno+"',neft='"+neft+"',phone='"+phno+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update employee set acctno='" + acctno + "',neft='" + neft + "',phone='" + phno + "' where empid='" + empid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update employee set address='"+address+"',pancard='"+pan+"',dob='"+dob+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update employee set address='" + address + "',pancard='" + pan + "',dob='" + dob + "' where empid='" + empid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update employee set post='"+position+"',deptno='"+dept+"',gender='"+gender+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update employee set post='" + position + "',deptno='" + dept + "',gender='" + gender + "' where empid='" + empid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
             at.close();
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
             conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
+            JOptionPane.showMessageDialog(this, "Table Updated");
             button123ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Table not Updated" );
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Table not Updated");
+
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        String empid=text10.getText();
-        if(empid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No employee details are selected" );
-        return;
+        String empid = text10.getText();
+        if (empid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No employee details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this employee ?","Delete",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from employee where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            conn.close();
-           JOptionPane.showMessageDialog(this,"Employee removed from database" );
-           button123ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this employee ?", "Delete", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from employee where empid='" + empid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                conn.close();
+                JOptionPane.showMessageDialog(this, "Employee removed from database");
+                button123ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
+            }
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         text10.setEditable(true);
         boolean ans;
-        String empid=text10.getText();
+        String empid = text10.getText();
         boolean tie;
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String empname=text11.getText();
-        tie=isnull(empname);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String empname = text11.getText();
+        tie = isnull(empname);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String married=text12.getText();
-        tie=isnull(married);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String married = text12.getText();
+        tie = isnull(married);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        ans=validans(married);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid ans");
+        ans = validans(married);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid ans");
             return;
         }
-        String gender=text13.getText();
-        ans=validgender(gender);
-        tie=isnull(gender);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String gender = text13.getText();
+        ans = validgender(gender);
+        tie = isnull(gender);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid gender");
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid gender");
             return;
         }
-        String acctno=text14.getText();
-        tie=isnull(acctno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String acctno = text14.getText();
+        tie = isnull(acctno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String neft=text15.getText();
-        tie=isnull(neft);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String neft = text15.getText();
+        tie = isnull(neft);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String phno=text16.getText();
-        tie=isnull(phno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String phno = text16.getText();
+        tie = isnull(phno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String address=text17.getText();
-        tie=isnull(address);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String address = text17.getText();
+        tie = isnull(address);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String pan=text18.getText();
-        tie=isnull(pan);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String pan = text18.getText();
+        tie = isnull(pan);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String dob=text19.getText();
-        tie=isnull(dob);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String dob = text19.getText();
+        tie = isnull(dob);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        ans=validdate(dob);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid dob");
+        ans = validdate(dob);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid dob");
             return;
         }
-        String position=text20.getText();
-        tie=isnull(position);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String position = text20.getText();
+        tie = isnull(position);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String dept=text21.getText();
-        tie=isnull(dept);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String dept = text21.getText();
+        tie = isnull(dept);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into employee values (?,?,?,?,?,?,?,?,?,?,?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into employee values (?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, empid);
-            pst.setString(2,empname);
+            pst.setString(2, empname);
             pst.setString(3, married);
-            pst.setString(4,gender);
+            pst.setString(4, gender);
             pst.setString(5, acctno);
             pst.setString(6, neft);
             pst.setString(7, phno);
@@ -2601,66 +2566,60 @@ public class admintabs extends javax.swing.JFrame {
             pst.setString(11, position);
             pst.setString(12, dept);
             pst.execute();
-            JOptionPane.showMessageDialog(this,"Employee added to database" );
-            
+            JOptionPane.showMessageDialog(this, "Employee added to database");
+
             pst.close();
             conn.close();
             button123ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        String empid=textadmin2.getText();
-        if(empid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No employee details are selected" );
-        return;
+        String empid = textadmin2.getText();
+        if (empid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No employee details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this admin ?","Remove admin",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from administrators where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            JOptionPane.showMessageDialog(this,"The administrator is removed" );
-            else
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-            conn.close();
-           
-           jButton1ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this admin ?", "Remove admin", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from administrators where empid='" + empid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0) {
+                    JOptionPane.showMessageDialog(this, "The administrator is removed");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                }
+                conn.close();
+
+                jButton1ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
+            }
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void textadmin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textadmin3ActionPerformed
@@ -2669,105 +2628,90 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jButton1.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableadmin.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from administrators;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("password");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("password");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         textadmin1.setText("");
-        DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
+        DefaultTableModel model = (DefaultTableModel) tableadmin.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-            DefaultTableModel model = (DefaultTableModel)tableadmin.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) tableadmin.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM administrators WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, textadmin1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("password");
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("password");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void tableadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableadminMouseClicked
-        try{
-            int row=tableadmin.getSelectedRow();
+        try {
+            int row = tableadmin.getSelectedRow();
             String empid = (tableadmin.getModel().getValueAt(row, 0).toString());
             textadmin2.setText(empid);
             String password = (tableadmin.getModel().getValueAt(row, 1).toString());
             textadmin3.setText(password);
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_tableadminMouseClicked
 
@@ -2779,103 +2723,95 @@ public class admintabs extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
 
-        String empid=textadmin2.getText();
-        boolean tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String empid = textadmin2.getText();
+        boolean tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String password=textadmin3.getText();
-        tie=isnull(password);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String password = textadmin3.getText();
+        tie = isnull(password);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into administrators values (?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into administrators values (?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, empid);
-            pst.setString(2,password);
-            
+            pst.setString(2, password);
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"New Administrator added to database" );
-            
+            JOptionPane.showMessageDialog(this, "New Administrator added to database");
+
             pst.close();
             conn.close();
             jButton1ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        String empid=textadmin2.getText();
-        boolean tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String empid = textadmin2.getText();
+        boolean tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        if(empid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No employee details are selected" );
-        return;
+        if (empid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No employee details are selected");
+            return;
         }
-        String password=textadmin3.getText();
-        tie=isnull(password);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String password = textadmin3.getText();
+        tie = isnull(password);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
         //textadmin2.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update administrators set password='"+password+"',password='"+password+"',password='"+password+"' where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            boolean res=at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            JOptionPane.showMessageDialog(this,"Table Updated" );
-            else
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            sql = "update administrators set password='" + password + "',password='" + password + "',password='" + password + "' where empid='" + empid + "'";
+            at = conn.prepareStatement(sql);
+            boolean res = at.execute(sql);
+            int x = at.getUpdateCount();
+            if (x != 0) {
+                JOptionPane.showMessageDialog(this, "Table Updated");
+            } else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
+            }
             at.close();
             conn.close();
-            
+
             jButton1ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void assettxt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assettxt7ActionPerformed
@@ -2883,111 +2819,99 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_assettxt7ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-       assettxt1.setText("");
-        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
+        assettxt1.setText("");
+        DefaultTableModel model = (DefaultTableModel) assettable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         jButton16.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
+        DefaultTableModel model = (DefaultTableModel) assettable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from assets;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("type");
-                String d3=rs.getString("procuredon");
-                String d4=rs.getString("cosprice");
-                String d5=rs.getString("modelno");
-                String d6=rs.getString("macid");
-                String d7=rs.getString("ram");
-                String d8=rs.getString("processor");
-                String d9=rs.getString("storage");
-       
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("type");
+                String d3 = rs.getString("procuredon");
+                String d4 = rs.getString("cosprice");
+                String d5 = rs.getString("modelno");
+                String d6 = rs.getString("macid");
+                String d7 = rs.getString("ram");
+                String d8 = rs.getString("processor");
+                String d9 = rs.getString("storage");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)assettable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) assettable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM assets WHERE assetid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, assettxt1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-               String d1=rs.getString("assetid");
-                String d2=rs.getString("type");
-                String d3=rs.getString("procuredon");
-                String d4=rs.getString("cosprice");
-                String d5=rs.getString("modelno");
-                String d6=rs.getString("macid");
-                String d7=rs.getString("ram");
-                String d8=rs.getString("processor");
-                String d9=rs.getString("storage");
-       
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
-                
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("type");
+                String d3 = rs.getString("procuredon");
+                String d4 = rs.getString("cosprice");
+                String d5 = rs.getString("modelno");
+                String d6 = rs.getString("macid");
+                String d7 = rs.getString("ram");
+                String d8 = rs.getString("processor");
+                String d9 = rs.getString("storage");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9});
+
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void assettableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assettableMouseClicked
-         try{
-            int row=assettable.getSelectedRow();
+        try {
+            int row = assettable.getSelectedRow();
             String assetid = (assettable.getModel().getValueAt(row, 0).toString());
             assettxt2.setText(assetid);
             String type = (assettable.getModel().getValueAt(row, 1).toString());
@@ -3006,12 +2930,9 @@ public class admintabs extends javax.swing.JFrame {
             assettxt9.setText(processor);
             String storage = (assettable.getModel().getValueAt(row, 8).toString());
             assettxt10.setText(storage);
-            
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_assettableMouseClicked
 
@@ -3031,745 +2952,666 @@ public class admintabs extends javax.swing.JFrame {
         assettxt2.setEditable(true);
         boolean ans;
         boolean tie;
-        String assetid=assettxt2.getText();
-        tie=isnull(assetid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String assetid = assettxt2.getText();
+        tie = isnull(assetid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String type=assettxt3.getText();
-        tie=isnull(type);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String type = assettxt3.getText();
+        tie = isnull(type);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String procuredon=assettxt4.getText();
-         tie=isnull(procuredon);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String procuredon = assettxt4.getText();
+        tie = isnull(procuredon);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        ans=validdate(procuredon);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid date");
-        }
-        String costprice=assettxt5.getText();
-         tie=isnull(costprice);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        ans = validdate(procuredon);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid date");
             return;
         }
-        String modelno=assettxt6.getText();
-         tie=isnull(modelno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String costprice = assettxt5.getText();
+        tie = isnull(costprice);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String macid=assettxt7.getText();
-         tie=isnull(macid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String modelno = assettxt6.getText();
+        tie = isnull(modelno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String ram=assettxt8.getText();
-         tie=isnull(ram);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String macid = assettxt7.getText();
+        tie = isnull(macid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String processor=assettxt9.getText();
-         tie=isnull(processor);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String ram = assettxt8.getText();
+        tie = isnull(ram);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String storage=assettxt10.getText();
-         tie=isnull(storage);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String processor = assettxt9.getText();
+        tie = isnull(processor);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        try{
+        String storage = assettxt10.getText();
+        tie = isnull(storage);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
+            return;
+        }
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into assets values (?,?,?,?,?,?,?,?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into assets values (?,?,?,?,?,?,?,?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, assetid);
-            pst.setString(2,type);
+            pst.setString(2, type);
             pst.setString(3, procuredon);
-            pst.setString(4,costprice);
+            pst.setString(4, costprice);
             pst.setString(5, modelno);
             pst.setString(6, macid);
             pst.setString(7, ram);
             pst.setString(8, processor);
             pst.setString(9, storage);
-            
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"Asset added to database" );
-            
+            JOptionPane.showMessageDialog(this, "Asset added to database");
+
             pst.close();
             conn.close();
             jButton16ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        String assetid=assettxt2.getText();
-        if(assetid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No asset details are selected" );
-        return;
+        String assetid = assettxt2.getText();
+        if (assetid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No asset details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this asset ?","Delete",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from assets where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this asset ?", "Delete", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from assets where assetid='" + assetid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0)
+           ; else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+                JOptionPane.showMessageDialog(this, "Asset removed from database");
+                jButton16ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           JOptionPane.showMessageDialog(this,"Asset removed from database" );
-           jButton16ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         boolean tie;
-        String assetid=assettxt2.getText();
-        tie=isnull(assetid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String assetid = assettxt2.getText();
+        tie = isnull(assetid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String type=assettxt3.getText();
-        tie=isnull(type);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String type = assettxt3.getText();
+        tie = isnull(type);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String procuredon=assettxt4.getText();
-        tie=isnull(procuredon);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String procuredon = assettxt4.getText();
+        tie = isnull(procuredon);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String costprice=assettxt5.getText();
-        tie=isnull(costprice);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        if (!validdate(procuredon)) {
+            JOptionPane.showMessageDialog(this, "INVALID DATE");
             return;
         }
-        String modelno=assettxt6.getText();
-        tie=isnull(modelno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String costprice = assettxt5.getText();
+        tie = isnull(costprice);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String macid=assettxt7.getText();
-        tie=isnull(macid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String modelno = assettxt6.getText();
+        tie = isnull(modelno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String ram=assettxt8.getText();
-        tie=isnull(ram);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String macid = assettxt7.getText();
+        tie = isnull(macid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String processor=assettxt9.getText();
-        tie=isnull(processor);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String ram = assettxt8.getText();
+        tie = isnull(ram);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String storage=assettxt10.getText();
-        tie=isnull(storage);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String processor = assettxt9.getText();
+        tie = isnull(processor);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
+            return;
+        }
+        String storage = assettxt10.getText();
+        tie = isnull(storage);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
         //assettxt2.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update assets set type='"+type+"',procuredon='"+procuredon+"',cosprice='"+costprice+"' where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update assets set type='" + type + "',procuredon='" + procuredon + "',cosprice='" + costprice + "' where assetid='" + assetid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+           ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update assets set modelno='"+modelno+"',macid='"+macid+"',ram='"+ram+"' where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update assets set modelno='" + modelno + "',macid='" + macid + "',ram='" + ram + "' where assetid='" + assetid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-             x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+           ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update assets set processor='"+processor+"',processor='"+processor+"',storage='"+storage+"' where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update assets set processor='" + processor + "',processor='" + processor + "',storage='" + storage + "' where assetid='" + assetid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
+            JOptionPane.showMessageDialog(this, "Table Updated");
             jButton16ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
-        String empid=n6.getText();
-        if(empid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No employee details are selected" );
-        return;
+        String empid = n6.getText();
+        if (empid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No employee details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this nominee ?","Remove admin",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from nominee where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            conn.close();
-           JOptionPane.showMessageDialog(this,"The nominee is removed" );
-           jButton40ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this nominee ?", "Remove admin", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from nominee where empid='" + empid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                conn.close();
+                JOptionPane.showMessageDialog(this, "The nominee is removed");
+                jButton40ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
+            }
         }
     }//GEN-LAST:event_jButton45ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-       login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        login enterpage = new login();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton73ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton73ActionPerformed
 
     private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton47ActionPerformed
 
     private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         login enterpage = new login();
-                enterpage.setVisible(true);
-                close();
+        enterpage.setVisible(true);
+        close();
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         assetissuet1.setText("");
-        
+
         assetissuet2.setText("");
-        DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        DefaultTableModel model = (DefaultTableModel) assetissuetable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         jButton24.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
+        DefaultTableModel model = (DefaultTableModel) assetissuetable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from assetsgiven;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("empid");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("empid");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-          DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) assetissuetable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM assetsgiven WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, assetissuet1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("empid");
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("empid");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-           
+
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-     DefaultTableModel model = (DefaultTableModel)assetissuetable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) assetissuetable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM assetsgiven WHERE assetid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, assetissuet2.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("empid");
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("empid");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
-        
+
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        String assetid=assetissuet3.getText();
-        boolean tie=isnull(assetid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String assetid = assetissuet3.getText();
+        boolean tie = isnull(assetid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        
-        String empid=assetissuet4.getText();
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+
+        String empid = assetissuet4.getText();
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into assetsgiven values (?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into assetsgiven values (?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, assetid);
-            pst.setString(2,empid);
-            
+            pst.setString(2, empid);
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"New Asset allocated" );
-            
+            JOptionPane.showMessageDialog(this, "New Asset allocated");
+
             pst.close();
             conn.close();
             jButton24ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-       assetissuet3.setText("");
-       assetissuet4.setText("");
+        assetissuet3.setText("");
+        assetissuet4.setText("");
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        String assetid=assetissuet3.getText();
-        if(assetid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No asset details are selected" );
-        return;
+        String assetid = assetissuet3.getText();
+        if (assetid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No asset details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to deallocate the asset to this employee ?","Delete",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from assetsgiven where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to deallocate the asset to this employee ?", "Delete", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from assetsgiven where assetid='" + assetid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0)
+           ; else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+                JOptionPane.showMessageDialog(this, "Asset deallocated");
+                jButton24ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           JOptionPane.showMessageDialog(this,"Asset deallocated" );
-           jButton24ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        String assetid=assetissuet3.getText();
-        boolean tie=isnull(assetid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String assetid = assetissuet3.getText();
+        boolean tie = isnull(assetid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String empid=assetissuet4.getText();
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String empid = assetissuet4.getText();
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        if(assetid.equals("")||assetid.equals("Not Mutable"))
-        {
-        JOptionPane.showMessageDialog(this,"No asset details are selected" );
-        return;
+        if (assetid.equals("") || assetid.equals("Not Mutable")) {
+            JOptionPane.showMessageDialog(this, "No asset details are selected");
+            return;
         }
-        
-        
+
         //assetissuet3.setText("Not Mutable");
-        
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update assetsgiven set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where assetid='"+assetid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update assetsgiven set empid='" + empid + "',empid='" + empid + "',empid='" + empid + "' where assetid='" + assetid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+           ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
+            JOptionPane.showMessageDialog(this, "Table Updated");
             jButton24ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void assetissuetableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_assetissuetableMouseClicked
-      try{
-            int row=assetissuetable.getSelectedRow();
+        try {
+            int row = assetissuetable.getSelectedRow();
             String assetid = (assetissuetable.getModel().getValueAt(row, 0).toString());
             assetissuet3.setText(assetid);
             String empid = (assetissuetable.getModel().getValueAt(row, 1).toString());
             assetissuet4.setText(empid);
-          
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_assetissuetableMouseClicked
 
     private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
-        
-        
+
         projectst1.setText("");
-        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        DefaultTableModel model = (DefaultTableModel) projectstable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton57ActionPerformed
 
     private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
-      jButton56.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
+        jButton56.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel) projectstable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from project;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("projid");
-                String d2=rs.getString("projname");
-                String d3=rs.getString("budget");
-                String d4=rs.getString("started");
-                String d5=rs.getString("deadline");
-                String d6=rs.getString("client");
-                String d7=rs.getString("deptno");
-                String d8=rs.getString("projecthead");
-                
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("projid");
+                String d2 = rs.getString("projname");
+                String d3 = rs.getString("budget");
+                String d4 = rs.getString("started");
+                String d5 = rs.getString("deadline");
+                String d6 = rs.getString("client");
+                String d7 = rs.getString("deptno");
+                String d8 = rs.getString("projecthead");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8});
+
             }
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton56ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) projectstable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM project WHERE projid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, projectst1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("projid");
-                String d2=rs.getString("projname");
-                String d3=rs.getString("budget");
-                String d4=rs.getString("started");
-                String d5=rs.getString("deadline");
-                String d6=rs.getString("client");
-                String d7=rs.getString("deptno");
-                String d8=rs.getString("projecthead");
-                
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("projid");
+                String d2 = rs.getString("projname");
+                String d3 = rs.getString("budget");
+                String d4 = rs.getString("started");
+                String d5 = rs.getString("deadline");
+                String d6 = rs.getString("client");
+                String d7 = rs.getString("deptno");
+                String d8 = rs.getString("projecthead");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton58ActionPerformed
 
     private void projectstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_projectstableMouseClicked
-         DefaultTableModel model = (DefaultTableModel)projectstable.getModel();
-        try{
-            int row=projectstable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) projectstable.getModel();
+        try {
+            int row = projectstable.getSelectedRow();
             String projid = (projectstable.getModel().getValueAt(row, 0).toString());
             projectst2.setText(projid);
             String projname = (projectstable.getModel().getValueAt(row, 1).toString());
@@ -3786,113 +3628,100 @@ public class admintabs extends javax.swing.JFrame {
             projectst8.setText(deptno);
             String projhead = (projectstable.getModel().getValueAt(row, 7).toString());
             projectst9.setText(projhead);
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_projectstableMouseClicked
 
     private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
         boolean ans;
         projectst2.setEditable(true);
-        String projid=projectst2.getText();
-        boolean tie=isnull(projid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String projid = projectst2.getText();
+        boolean tie = isnull(projid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String projname=projectst3.getText();
-        tie=isnull(projname);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String projname = projectst3.getText();
+        tie = isnull(projname);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String budget=projectst4.getText();
-        tie=isnull(budget);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String budget = projectst4.getText();
+        tie = isnull(budget);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String started=projectst5.getText();
-        tie=isnull(started);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String started = projectst5.getText();
+        tie = isnull(started);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        ans=validdate(started);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid start date");
-        }
-        String deadline=projectst6.getText();
-        tie=isnull(deadline);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        ans = validdate(started);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid start date");
             return;
         }
-        ans=validdate(deadline);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid deadline date");
-        }
-        String client=projectst7.getText();
-        tie=isnull(client);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String deadline = projectst6.getText();
+        tie = isnull(deadline);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String deptno=projectst8.getText();
-        tie=isnull(deptno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        ans = validdate(deadline);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid deadline date");
             return;
         }
-        String projecthead=projectst9.getText();
-        tie=isnull(projecthead);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String client = projectst7.getText();
+        tie = isnull(client);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        try{
+        String deptno = projectst8.getText();
+        tie = isnull(deptno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
+            return;
+        }
+        String projecthead = projectst9.getText();
+        tie = isnull(projecthead);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
+            return;
+        }
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into project values (?,?,?,?,?,?,?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into project values (?,?,?,?,?,?,?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, projid);
-            pst.setString(2,projname);
+            pst.setString(2, projname);
             pst.setString(3, budget);
-            pst.setString(4,started);
+            pst.setString(4, started);
             pst.setString(5, deadline);
             pst.setString(6, client);
             pst.setString(7, deptno);
             pst.setString(8, projecthead);
-            
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"Project Created" );
-            
+            JOptionPane.showMessageDialog(this, "Project Created");
+
             pst.close();
             conn.close();
             jButton56ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton59ActionPerformed
@@ -3909,313 +3738,275 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
-        String projectid=projectst2.getText();
-        if(projectid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No Project details are selected" );
-        return;
+        String projectid = projectst2.getText();
+        if (projectid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No Project details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this project ?","Delete",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from project where projid='"+projectid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           JOptionPane.showMessageDialog(this,"Project removed from database" );
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this project ?", "Delete", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from project where projid='" + projectid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0) {
+                    JOptionPane.showMessageDialog(this, "Project removed from database");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+
+                jButton56ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           
-           jButton56ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
-       String projid=projectst2.getText();
-       boolean tie=isnull(projid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String projid = projectst2.getText();
+        boolean tie = isnull(projid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String projname=projectst3.getText();
-        tie=isnull(projname);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String projname = projectst3.getText();
+        tie = isnull(projname);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String budget=projectst4.getText();
-        tie=isnull(budget);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String budget = projectst4.getText();
+        tie = isnull(budget);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String started=projectst5.getText();
-        tie=isnull(started);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String started = projectst5.getText();
+        tie = isnull(started);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String deadline=projectst6.getText();
-        tie=isnull(deadline);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        if (!validdate(started)) {
+            JOptionPane.showMessageDialog(this, "INVALID DATE");
             return;
         }
-        String client=projectst7.getText();
-        tie=isnull(client);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String deadline = projectst6.getText();
+        tie = isnull(deadline);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        String deptno=projectst8.getText();
-        tie=isnull(deptno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        if (!validdate(deadline)) {
+            JOptionPane.showMessageDialog(this, "INVALID DATE");
             return;
         }
-        String projecthead=projectst9.getText();
-        tie=isnull(projecthead);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String client = projectst7.getText();
+        tie = isnull(client);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
+            return;
+        }
+        String deptno = projectst8.getText();
+        tie = isnull(deptno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
+            return;
+        }
+        String projecthead = projectst9.getText();
+        tie = isnull(projecthead);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
         //projectst2.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update project set projname='"+projname+"',budget='"+budget+"',started='"+started+"' where projid='"+projid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update project set projname='" + projname + "',budget='" + budget + "',started='" + started + "' where projid='" + projid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update project set deadline='"+deadline+"',client='"+client+"',deptno='"+deptno+"' where projid='"+projid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update project set deadline='" + deadline + "',client='" + client + "',deptno='" + deptno + "' where projid='" + projid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            sql="update project set projecthead='"+projecthead+"',projecthead='"+projecthead+"',projecthead='"+projecthead+"' where projid='"+projid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update project set projecthead='" + projecthead + "',projecthead='" + projecthead + "',projecthead='" + projecthead + "' where projid='" + projid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Project Details Updated" );
+            JOptionPane.showMessageDialog(this, "Project Details Updated");
             jButton56ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e);
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }//GEN-LAST:event_jButton60ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-       jButton33.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)positiontable.getModel();
+        jButton33.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel) positiontable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from position;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("type");
-                String d2=rs.getString("salary");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("type");
+                String d2 = rs.getString("salary");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-       DefaultTableModel model = (DefaultTableModel)positiontable.getModel();
+        DefaultTableModel model = (DefaultTableModel) positiontable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void positiontableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_positiontableMouseClicked
-        try{
-            int row=positiontable.getSelectedRow();
+        try {
+            int row = positiontable.getSelectedRow();
             String pos = (positiontable.getModel().getValueAt(row, 0).toString());
             positiont1.setText(pos);
             String salary = (positiontable.getModel().getValueAt(row, 1).toString());
             positiont2.setText(salary);
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_positiontableMouseClicked
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-         String type=positiont1.getText();
-        boolean tie=isnull(type);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String type = positiont1.getText();
+        boolean tie = isnull(type);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String sal=positiont2.getText();
-        tie=isnull(sal);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String sal = positiont2.getText();
+        tie = isnull(sal);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into position values (?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into position values (?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, type);
-            pst.setString(2,sal);
-            
+            pst.setString(2, sal);
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"New Designation added to database" );
-            
+            JOptionPane.showMessageDialog(this, "New Designation added to database");
+
             pst.close();
             conn.close();
             jButton33ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        String type=positiont1.getText();
-        if(positiont1.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No Position details are selected" );
-        return;
+        String type = positiont1.getText();
+        if (positiont1.equals("")) {
+            JOptionPane.showMessageDialog(this, "No Position details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this Designation ?","Remove admin",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from position where type='"+type+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-               ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this Designation ?", "Remove admin", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from position where type='" + type + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0)
+               ; else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+                JOptionPane.showMessageDialog(this, "The Designation is removed");
+                jButton33ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           JOptionPane.showMessageDialog(this,"The Designation is removed" );
-           jButton33ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton36ActionPerformed
 
@@ -4225,149 +4016,129 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-        String pos=positiont1.getText();
-        boolean tie=isnull(pos);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String pos = positiont1.getText();
+        boolean tie = isnull(pos);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String sal=positiont2.getText();
-        tie=isnull(sal);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String sal = positiont2.getText();
+        tie = isnull(sal);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        if(pos.equals("")||pos.equals("Not Mutable"))
-        {
-        JOptionPane.showMessageDialog(this,"No Designation details are selected" );
-        return;
+        if (pos.equals("") || pos.equals("Not Mutable")) {
+            JOptionPane.showMessageDialog(this, "No Designation details are selected");
+            return;
         }
-        
-        
+
         //positiont1.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update position set salary='"+sal+"',salary='"+sal+"',salary='"+sal+"' where type='"+pos+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update position set salary='" + sal + "',salary='" + sal + "',salary='" + sal + "' where type='" + pos + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Details Updated" );
+            JOptionPane.showMessageDialog(this, "Details Updated");
             jButton33ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
         n1.setText("");
-        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        DefaultTableModel model = (DefaultTableModel) ntable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton41ActionPerformed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
         jButton40.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
+        DefaultTableModel model = (DefaultTableModel) ntable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from nominee;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("name");
-                String d2=rs.getString("dob");
-                String d3=rs.getString("gender");
-                String d4=rs.getString("relation");
-                String d5=rs.getString("empid");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("name");
+                String d2 = rs.getString("dob");
+                String d3 = rs.getString("gender");
+                String d4 = rs.getString("relation");
+                String d5 = rs.getString("empid");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)ntable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) ntable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM nominee WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, n1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-               String d1=rs.getString("name");
-                String d2=rs.getString("dob");
-                String d3=rs.getString("gender");
-                String d4=rs.getString("relation");
-                String d5=rs.getString("empid");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("name");
+                String d2 = rs.getString("dob");
+                String d3 = rs.getString("gender");
+                String d4 = rs.getString("relation");
+                String d5 = rs.getString("empid");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton42ActionPerformed
@@ -4378,85 +4149,77 @@ public class admintabs extends javax.swing.JFrame {
         n4.setText("");
         n5.setText("");
         n6.setText("");
-        
-        
+
     }//GEN-LAST:event_jButton46ActionPerformed
 
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         boolean ans;
-        String name=n2.getText();
-        boolean tie=isnull(name);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String name = n2.getText();
+        boolean tie = isnull(name);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String dob=n3.getText();
-        tie=isnull(dob);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String dob = n3.getText();
+        tie = isnull(dob);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        ans=validdate(dob);
-        if(ans==false)
-        {
-            JOptionPane.showMessageDialog(this,"Invalid date");
-        }
-        String gender=n4.getText();
-        tie=isnull(gender);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        ans = validdate(dob);
+        if (ans == false) {
+            JOptionPane.showMessageDialog(this, "Invalid date");
             return;
         }
-        String relation=n5.getText();
-        tie=isnull(relation);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String gender = n4.getText();
+        tie = isnull(gender);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String empid=n6.getText();
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String relation = n5.getText();
+        tie = isnull(relation);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        try{
+        String empid = n6.getText();
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
+            return;
+        }
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into nominee values (?,?,?,?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into nominee values (?,?,?,?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, name);
-            pst.setString(2,dob);
-            pst.setString(3,gender);
-            pst.setString(4,relation);
-            pst.setString(5,empid);
+            pst.setString(2, dob);
+            pst.setString(3, gender);
+            pst.setString(4, relation);
+            pst.setString(5, empid);
             pst.execute();
-            JOptionPane.showMessageDialog(this,"New Nominee added to database" );
-            
+            JOptionPane.showMessageDialog(this, "New Nominee added to database");
+
             pst.close();
             conn.close();
             jButton40ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton43ActionPerformed
 
     private void ntableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ntableMouseClicked
-       DefaultTableModel model = (DefaultTableModel)ntable.getModel();
-        try{
-            int row=ntable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) ntable.getModel();
+        try {
+            int row = ntable.getSelectedRow();
             String name = (ntable.getModel().getValueAt(row, 0).toString());
             n2.setText(name);
             String dob = (ntable.getModel().getValueAt(row, 1).toString());
@@ -4467,102 +4230,86 @@ public class admintabs extends javax.swing.JFrame {
             n5.setText(relation);
             String empid = (ntable.getModel().getValueAt(row, 4).toString());
             n6.setText(empid);
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_ntableMouseClicked
 
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) deptable.getModel();
         model.setRowCount(0);
         dept1.setText("");
     }//GEN-LAST:event_jButton49ActionPerformed
 
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
-       jButton48.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
+        jButton48.setText("Refresh");
+        DefaultTableModel model = (DefaultTableModel) deptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from department;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("deptno");
-                String d2=rs.getString("name");
-                String d3=rs.getString("head");
-                String d4=rs.getString("budget");
-                model.addRow (new Object[]{d1,d2,d3,d4});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("deptno");
+                String d2 = rs.getString("name");
+                String d3 = rs.getString("head");
+                String d4 = rs.getString("budget");
+                model.addRow(new Object[]{d1, d2, d3, d4});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton48ActionPerformed
 
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) deptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM department WHERE deptno=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, dept1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-               String d1=rs.getString("deptno");
-                String d2=rs.getString("name");
-                String d3=rs.getString("head");
-                String d4=rs.getString("budget");
-                model.addRow (new Object[]{d1,d2,d3,d4});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("deptno");
+                String d2 = rs.getString("name");
+                String d3 = rs.getString("head");
+                String d4 = rs.getString("budget");
+                model.addRow(new Object[]{d1, d2, d3, d4});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton50ActionPerformed
@@ -4570,71 +4317,62 @@ public class admintabs extends javax.swing.JFrame {
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         dept2.setEditable(true);
         boolean ans;
-        String deptno=dept2.getText();
-        boolean tie=isnull(deptno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String deptno = dept2.getText();
+        boolean tie = isnull(deptno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String name=dept3.getText();
-        tie=isnull(name);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String name = dept3.getText();
+        tie = isnull(name);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String head=dept4.getText();
-        tie=isnull(head);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String head = dept4.getText();
+        tie = isnull(head);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String budget=dept5.getText();
-        tie=isnull(budget);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String budget = dept5.getText();
+        tie = isnull(budget);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-      
-       
-        
-        try{
+
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into department values (?,?,?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into department values (?,?,?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, deptno);
-            pst.setString(2,name);
+            pst.setString(2, name);
             pst.setString(3, head);
-            pst.setString(4,budget);
-          
-            
+            pst.setString(4, budget);
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"Department added to database" );
-            
+            JOptionPane.showMessageDialog(this, "Department added to database");
+
             pst.close();
             conn.close();
             jButton48ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void deptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deptableMouseClicked
-        DefaultTableModel model = (DefaultTableModel)deptable.getModel();
-        try{
-            int row=deptable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) deptable.getModel();
+        try {
+            int row = deptable.getSelectedRow();
             String deptno = (deptable.getModel().getValueAt(row, 0).toString());
             dept2.setText(deptno);
             String name = (deptable.getModel().getValueAt(row, 1).toString());
@@ -4643,14 +4381,9 @@ public class admintabs extends javax.swing.JFrame {
             dept4.setText(head);
             String budget = (deptable.getModel().getValueAt(row, 3).toString());
             dept5.setText(budget);
-            
-            
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_deptableMouseClicked
 
@@ -4662,409 +4395,352 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton54ActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
-       String deptno=dept2.getText();
-        if(deptno.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No department details are selected" );
-        return;
+        String deptno = dept2.getText();
+        if (deptno.equals("")) {
+            JOptionPane.showMessageDialog(this, "No department details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this department ?","Remove admin",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from department where deptno='"+deptno+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-           ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this department ?", "Remove admin", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from department where deptno='" + deptno + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0)
+           ; else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+                JOptionPane.showMessageDialog(this, "The Department is removed");
+                jButton48ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           JOptionPane.showMessageDialog(this,"The Department is removed" );
-           jButton48ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton52ActionPerformed
 
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
-        String deptno=dept2.getText();
-        boolean tie=isnull(deptno);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String deptno = dept2.getText();
+        boolean tie = isnull(deptno);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String name=dept3.getText();
-        tie=isnull(name);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String name = dept3.getText();
+        tie = isnull(name);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String head=dept4.getText();
-        tie=isnull(head);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String head = dept4.getText();
+        tie = isnull(head);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        String budget=dept5.getText();
-        tie=isnull(budget);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL VALUE NOT ALLOWED");
+        String budget = dept5.getText();
+        tie = isnull(budget);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL VALUE NOT ALLOWED");
             return;
         }
-        
-        
-        try{
-            
+
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update department set name='"+name+"',head='"+head+"',budget='"+budget+"' where deptno='"+deptno+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update department set name='" + name + "',head='" + head + "',budget='" + budget + "' where deptno='" + deptno + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            
+
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Table Updated" );
+            JOptionPane.showMessageDialog(this, "Table Updated");
             jButton48ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }//GEN-LAST:event_jButton53ActionPerformed
 
     private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
         ept1.setText("");
         ept2.setText("");
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
         model.setRowCount(0);
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
         jButton66.setText("Refresh");
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from empprojects;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("projid");
-                
-       
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("projid");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_jButton66ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM empprojects WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, ept1.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("projid");
-               
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("projid");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
-        model.setRowCount(0); 
-        try{
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
+        model.setRowCount(0);
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM empprojects WHERE projid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, ept2.getText());
-            rs=pst.executeQuery();
-            int valueset=0;
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("projid");
-               
-                
-                model.addRow (new Object[]{d1,d2});
-                valueset=1;
+            rs = pst.executeQuery();
+            int valueset = 0;
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("projid");
+
+                model.addRow(new Object[]{d1, d2});
+                valueset = 1;
             }
-            
+
             rs.close();
             pst.close();
             conn.close();
-            if(valueset==0)
-                JOptionPane.showMessageDialog(null,"No matching record");
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+            if (valueset == 0) {
+                JOptionPane.showMessageDialog(null, "No matching record");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton69ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
-       String empid=ept3.getText();
-        if(empid.equals(""))
-        {
-        JOptionPane.showMessageDialog(this,"No  details are selected" );
-        return;
+        String empid = ept3.getText();
+        if (empid.equals("")) {
+            JOptionPane.showMessageDialog(this, "No  details are selected");
+            return;
         }
-        int input = JOptionPane.showConfirmDialog(null,"Do you really want to remove this employee from the project ?","Delete",JOptionPane.YES_NO_OPTION);
-        
-        if(input==0)
-        {    
-        
-        try{
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
-            Statement at = conn.createStatement();
-            String sql;
-            sql="delete from empprojects where empid='"+empid+"'";
-            at=conn.prepareStatement(sql);
-            at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
-                return;
+        int input = JOptionPane.showConfirmDialog(null, "Do you really want to remove this employee from the project ?", "Delete", JOptionPane.YES_NO_OPTION);
+
+        if (input == 0) {
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                        + "user=root&password=mysql";
+                Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
+                Statement at = conn.createStatement();
+                String sql;
+                sql = "delete from empprojects where empid='" + empid + "'";
+                at = conn.prepareStatement(sql);
+                at.execute(sql);
+                int x = at.getUpdateCount();
+                if (x != 0)
+            ; else {
+                    JOptionPane.showMessageDialog(this, "Table NOT updated");
+                    return;
+                }
+                conn.close();
+                JOptionPane.showMessageDialog(this, "Employee removed from Project");
+                jButton66ActionPerformed(evt);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+
             }
-            conn.close();
-           JOptionPane.showMessageDialog(this,"Employee removed from Project" );
-           jButton66ActionPerformed(evt);
-        }
-    
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e );
-            
-        }
         }
     }//GEN-LAST:event_jButton72ActionPerformed
 
     private void eptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eptableMouseClicked
-        DefaultTableModel model = (DefaultTableModel)eptable.getModel();
-        try{
-            int row=eptable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) eptable.getModel();
+        try {
+            int row = eptable.getSelectedRow();
             String empid = (eptable.getModel().getValueAt(row, 0).toString());
             ept3.setText(empid);
             String projid = (eptable.getModel().getValueAt(row, 1).toString());
             ept4.setText(projid);
-           
-           
-            
-            }   
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_eptableMouseClicked
 
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-        
-        String empid=ept3.getText();
-        String projid=ept4.getText();
-        boolean tie=isnull(projid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+
+        String empid = ept3.getText();
+        String projid = ept4.getText();
+        boolean tie = isnull(projid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        
-        
-        try{
+
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             PreparedStatement pst = null;
-            String sql="insert into empprojects values (?,?)";
-            pst=conn.prepareStatement(sql);
+            String sql = "insert into empprojects values (?,?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, empid);
-            pst.setString(2,projid);
-            
-            
+            pst.setString(2, projid);
+
             pst.execute();
-            JOptionPane.showMessageDialog(this,"Employee added to Project" );
-            
+            JOptionPane.showMessageDialog(this, "Employee added to Project");
+
             pst.close();
             conn.close();
             jButton66ActionPerformed(evt);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
 
         }
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-         String projid=ept4.getText();
-        String empid=ept3.getText();
-        boolean tie=isnull(projid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        String projid = ept4.getText();
+        String empid = ept3.getText();
+        boolean tie = isnull(projid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        tie=isnull(empid);
-        if(tie==true)
-        {
-            JOptionPane.showMessageDialog(this,"NULL INPUT NOT PERMITTED");
+        tie = isnull(empid);
+        if (tie == true) {
+            JOptionPane.showMessageDialog(this, "NULL INPUT NOT PERMITTED");
             return;
         }
-        if(projid.equals("")||projid.equals("Not Mutable"))
-        {
-            JOptionPane.showMessageDialog(this,"No Project selected");
+        if (projid.equals("") || projid.equals("Not Mutable")) {
+            JOptionPane.showMessageDialog(this, "No Project selected");
             return;
         }
         //ept4.setText("Not Mutable");
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String sql;
-            sql="update empprojects set empid='"+empid+"',empid='"+empid+"',empid='"+empid+"' where projid='"+projid+"'";
-            at=conn.prepareStatement(sql);
+            sql = "update empprojects set empid='" + empid + "',empid='" + empid + "',empid='" + empid + "' where projid='" + projid + "'";
+            at = conn.prepareStatement(sql);
             at.execute(sql);
-            int x=at.getUpdateCount();
-            if(x!=0)
-            ;
-            else
-            {
-                JOptionPane.showMessageDialog(this,"Table NOT updated" );
+            int x = at.getUpdateCount();
+            if (x != 0)
+            ; else {
+                JOptionPane.showMessageDialog(this, "Table NOT updated");
                 return;
             }
-            
+
             at.close();
             conn.close();
-            JOptionPane.showMessageDialog(this,"Details Updated" );
+            JOptionPane.showMessageDialog(this, "Details Updated");
             jButton66ActionPerformed(evt);
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(null,e);
-            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+
         }
     }//GEN-LAST:event_jButton71ActionPerformed
 
@@ -5074,385 +4750,297 @@ public class admintabs extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void ASSETSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ASSETSMouseClicked
-         DefaultTableModel model = (DefaultTableModel)emptable.getModel();
+        DefaultTableModel model = (DefaultTableModel) emptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from employee;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("empname");
-                String d3=rs.getString("married");
-                String d4=rs.getString("gender");
-                String d5=rs.getString("acctno");
-                String d6=rs.getString("neft");
-                String d7=rs.getString("phone");
-                String d8=rs.getString("address");
-                String d9=rs.getString("pancard");
-                String d10=rs.getString("dob");
-                String d11=rs.getString("post");
-                String d12=rs.getString("deptno");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("empname");
+                String d3 = rs.getString("married");
+                String d4 = rs.getString("gender");
+                String d5 = rs.getString("acctno");
+                String d6 = rs.getString("neft");
+                String d7 = rs.getString("phone");
+                String d8 = rs.getString("address");
+                String d9 = rs.getString("pancard");
+                String d10 = rs.getString("dob");
+                String d11 = rs.getString("post");
+                String d12 = rs.getString("deptno");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        model = (DefaultTableModel)assetissuetable.getModel();
+        model = (DefaultTableModel) assetissuetable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from assetsgiven;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("empid");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("empid");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        
-        
-        model = (DefaultTableModel)deptable.getModel();
+
+        model = (DefaultTableModel) deptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from department;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("deptno");
-                String d2=rs.getString("name");
-                String d3=rs.getString("head");
-                String d4=rs.getString("budget");
-                model.addRow (new Object[]{d1,d2,d3,d4});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("deptno");
+                String d2 = rs.getString("name");
+                String d3 = rs.getString("head");
+                String d4 = rs.getString("budget");
+                model.addRow(new Object[]{d1, d2, d3, d4});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        
-        
-        
-        
-        model = (DefaultTableModel)tableadmin.getModel();
+
+        model = (DefaultTableModel) tableadmin.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from administrators;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("password");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("password");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        model = (DefaultTableModel)projectstable.getModel();
+        model = (DefaultTableModel) projectstable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from project;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("projid");
-                String d2=rs.getString("projname");
-                String d3=rs.getString("budget");
-                String d4=rs.getString("started");
-                String d5=rs.getString("deadline");
-                String d6=rs.getString("client");
-                String d7=rs.getString("deptno");
-                String d8=rs.getString("projecthead");
-                
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("projid");
+                String d2 = rs.getString("projname");
+                String d3 = rs.getString("budget");
+                String d4 = rs.getString("started");
+                String d5 = rs.getString("deadline");
+                String d6 = rs.getString("client");
+                String d7 = rs.getString("deptno");
+                String d8 = rs.getString("projecthead");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8});
+
             }
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        model = (DefaultTableModel)eptable.getModel();
+        model = (DefaultTableModel) eptable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from empprojects;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("empid");
-                String d2=rs.getString("projid");
-                
-       
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("empid");
+                String d2 = rs.getString("projid");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-         model = (DefaultTableModel)assettable.getModel();
+        model = (DefaultTableModel) assettable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from assets;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("assetid");
-                String d2=rs.getString("type");
-                String d3=rs.getString("procuredon");
-                String d4=rs.getString("cosprice");
-                String d5=rs.getString("modelno");
-                String d6=rs.getString("macid");
-                String d7=rs.getString("ram");
-                String d8=rs.getString("processor");
-                String d9=rs.getString("storage");
-       
-                model.addRow (new Object[]{d1,d2,d3,d4,d5,d6,d7,d8,d9});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("assetid");
+                String d2 = rs.getString("type");
+                String d3 = rs.getString("procuredon");
+                String d4 = rs.getString("cosprice");
+                String d5 = rs.getString("modelno");
+                String d6 = rs.getString("macid");
+                String d7 = rs.getString("ram");
+                String d8 = rs.getString("processor");
+                String d9 = rs.getString("storage");
+
+                model.addRow(new Object[]{d1, d2, d3, d4, d5, d6, d7, d8, d9});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        model = (DefaultTableModel)ntable.getModel();
+        model = (DefaultTableModel) ntable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from nominee;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("name");
-                String d2=rs.getString("dob");
-                String d3=rs.getString("gender");
-                String d4=rs.getString("relation");
-                String d5=rs.getString("empid");
-                model.addRow (new Object[]{d1,d2,d3,d4,d5});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("name");
+                String d2 = rs.getString("dob");
+                String d3 = rs.getString("gender");
+                String d4 = rs.getString("relation");
+                String d5 = rs.getString("empid");
+                model.addRow(new Object[]{d1, d2, d3, d4, d5});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
-        model = (DefaultTableModel)positiontable.getModel();
+        model = (DefaultTableModel) positiontable.getModel();
         model.setRowCount(0);
-        try{
-            
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
-            
-             String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" + 
-                                   "user=root&password=mysql";
-            Connection conn = (Connection)DriverManager.getConnection(connectionUrl);
-            
+
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
+            Connection conn = (Connection) DriverManager.getConnection(connectionUrl);
+
             Statement at = conn.createStatement();
             String query = "select*from position;";
             ResultSet rs = at.executeQuery(query); //the result is stored in rs
-            while(rs.next())
-            {
-                String d1=rs.getString("type");
-                String d2=rs.getString("salary");
-                
-                model.addRow (new Object[]{d1,d2});
-                
+            while (rs.next()) {
+                String d1 = rs.getString("type");
+                String d2 = rs.getString("salary");
+
+                model.addRow(new Object[]{d1, d2});
+
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             rs.close();
             at.close();
             conn.close();
-            
-        }   
-        catch (Exception e)
-        {
-           JOptionPane.showMessageDialog(this,"Error in connection" );
-            
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
+
         }
     }//GEN-LAST:event_ASSETSMouseClicked
 
     private void jButton7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton7FocusGained
-        
+
     }//GEN-LAST:event_jButton7FocusGained
 
     private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown

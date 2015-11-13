@@ -15,6 +15,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
 import java.awt.*;
+
 public class login extends javax.swing.JFrame {
 
     /**
@@ -23,11 +24,12 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
     }
-    public void close()
-    {
-        WindowEvent winClosingEvent= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+
+    public void close() {
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEve­ntQueue().postEvent(winClosingEvent);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,8 +52,9 @@ public class login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login Page");
         setBackground(java.awt.Color.cyan);
-        setPreferredSize(new java.awt.Dimension(650, 700));
+        setPreferredSize(new java.awt.Dimension(737, 447));
         setResizable(false);
+        setSize(new java.awt.Dimension(0, 0));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -59,10 +62,17 @@ public class login extends javax.swing.JFrame {
         });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN CREDENTIALS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Abyssinica SIL", 2, 24))); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(645, 94));
 
-        l1.setText("Enter userid:");
+        userid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                useridActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setText("Enter the password:");
+        l1.setText("Userid:");
+
+        jLabel2.setText("Password:");
 
         jButton1.setText("ADMIN LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,12 +99,6 @@ public class login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(194, 194, 194))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,16 +106,20 @@ public class login extends javax.swing.JFrame {
                         .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                                .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(password)
+                            .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 259, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,41 +130,38 @@ public class login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(81, 81, 81))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newyork.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CompanyLogo.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel1)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
 
         pack();
@@ -164,41 +169,36 @@ public class login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String uid=userid.getText();
-        String pwd=password.getText();
+        String uid = userid.getText();
+        String pwd = password.getText();
         //System.out.println("testing");
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM administrators WHERE empid=? AND password=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, uid);
-            pst.setString(2,pwd);
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
+            pst.setString(2, pwd);
+            rs = pst.executeQuery();
+            if (rs.next()) {
                 //JOptionPane.showMessageDialog(null,"Login in administrator mode successful");
                 admintabs tabs = new admintabs();
                 tabs.setVisible(true);
                 close();
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Username or password is not correct");
+            } else {
+                JOptionPane.showMessageDialog(null, "Username or password is not correct");
             }
             rs.close();
             pst.close();
             conn.close();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
 
@@ -206,80 +206,77 @@ public class login extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String s = jComboBox1.getSelectedItem().toString();
-        if(s.equalsIgnoreCase("employee"))
-        {
+        if (s.equalsIgnoreCase("employee")) {
             password.setVisible(false);
             jLabel2.setVisible(false);
             jButton1.setVisible(false);
             jButton2.setVisible(true);
             l1.setVisible(true);
-            jLabel2.setVisible(false);    
+            jLabel2.setVisible(false);
             userid.setVisible(true);
         }
-        if(s.equalsIgnoreCase("Administrator"))
-        {
+        if (s.equalsIgnoreCase("Administrator")) {
             password.setVisible(true);
             jLabel2.setVisible(true);
             jButton1.setVisible(true);
             jButton2.setVisible(false);
             l1.setVisible(true);
-            jLabel2.setVisible(true); 
+            jLabel2.setVisible(true);
             userid.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         jButton2.setVisible(true);
         jButton1.setVisible(false);
         userid.setVisible(true);
-        
+
         l1.setVisible(true);
         password.setVisible(false);
         jLabel2.setVisible(false);
-        
+
     }//GEN-LAST:event_formComponentShown
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        String uid=userid.getText();
-        
+
+        String uid = userid.getText();
+
         //System.out.println("testing");
-        try{
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?" +
-            "user=root&password=mysql";
+            String connectionUrl = "jdbc:mysql://localhost/recursiveinc?"
+                    + "user=root&password=mysql";
             Connection conn = null;
-            conn=(Connection)DriverManager.getConnection(connectionUrl);
+            conn = (Connection) DriverManager.getConnection(connectionUrl);
             ResultSet rs = null;
             PreparedStatement pst = null;
             String query = "SELECT*FROM employee WHERE empid=?;";
-            pst=conn.prepareStatement(query);
+            pst = conn.prepareStatement(query);
             pst.setString(1, uid);
-            
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
+
+            rs = pst.executeQuery();
+            if (rs.next()) {
                 //JOptionPane.showMessageDialog(null,"Login in administrator mode successful");
                 emppage emp = new emppage();
                 emp.setVisible(true);
                 close();
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Username is not correct");
+            } else {
+                JOptionPane.showMessageDialog(null, "Username is not correct");
             }
             rs.close();
             pst.close();
             conn.close();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this,"Error in connection" );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error in connection");
 
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void useridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_useridActionPerformed
 
     /**
      * @param args the command line arguments

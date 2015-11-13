@@ -115,7 +115,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="button123" min="-2" pref="123" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jButton5" pref="123" max="32767" attributes="0"/>
+                                              <Component id="jButton5" pref="0" max="32767" attributes="0"/>
                                               <Component id="jButton4" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -256,7 +256,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5671" max="32767" attributes="0"/>
+                      <EmptySpace pref="5688" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -517,8 +517,8 @@
                 <Property name="text" type="java.lang.String" value="Update Employee"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jButton7FocusGained"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton8">
@@ -687,7 +687,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jButton63" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5689" max="32767" attributes="0"/>
+                      <EmptySpace pref="5706" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1034,7 +1034,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="jButton73" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5681" max="32767" attributes="0"/>
+                      <EmptySpace pref="5698" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1367,7 +1367,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Component id="jButton19" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5770" max="32767" attributes="0"/>
+                      <EmptySpace pref="5787" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1723,7 +1723,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton47" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5712" max="32767" attributes="0"/>
+                      <EmptySpace pref="5729" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1995,7 +1995,7 @@
                       <Component id="jSeparator10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jButton39" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5788" max="32767" attributes="0"/>
+                      <EmptySpace pref="5805" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2235,7 +2235,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jButton55" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5786" max="32767" attributes="0"/>
+                      <EmptySpace pref="5803" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2513,7 +2513,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
                       <Component id="jButton31" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5684" max="32767" attributes="0"/>
+                      <EmptySpace pref="5701" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2727,7 +2727,7 @@
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jButton15" max="32767" attributes="0"/>
-                          <Component id="jButton12" pref="140" max="32767" attributes="0"/>
+                          <Component id="jButton12" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="jButton13" min="-2" pref="141" max="-2" attributes="0"/>
@@ -2777,7 +2777,7 @@
                       <Component id="jButton15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
                       <Component id="jButton14" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="5731" max="32767" attributes="0"/>
+                      <EmptySpace pref="5748" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
